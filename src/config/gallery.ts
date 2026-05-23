@@ -22,7 +22,6 @@ const galleryItems = [
   { file: "17-The land Of legends.jpeg", caption: "The Land Of Legends" },
   { file: "18-the land of legends.jpeg", caption: "the Land of Legends" },
   { file: "19-Antalya.jpeg", caption: "Antalya" },
-  { file: "20-İcebreak Konseri.jpeg", caption: "İcebreak Konseri" },
   {
     file: "21-Cumhurbaşkanlığı Millet Kütüphanesi.jpeg",
     caption: "Cumhurbaşkanlığı Millet Kütüphanesi",

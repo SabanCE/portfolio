@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@upstash/redis": "^1.38.0",
     "iron-session": "^8.0.4",
     "next": "^15.1.0",
     "react": "^19.0.0",

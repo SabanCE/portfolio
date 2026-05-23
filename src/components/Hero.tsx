@@ -3,6 +3,7 @@
 import { useLocale } from "@/components/providers/LocaleProvider";
 import { siteConfig } from "@/config/site";
 import Image from "next/image";
+import { VisitorCounter } from "@/components/VisitorCounter";
 
 export function Hero() {
   const { t } = useLocale();
@@ -18,13 +19,16 @@ export function Hero() {
           className="animate-fade-up space-y-6 opacity-0"
           style={{ animationFillMode: "forwards" }}
         >
-          <p className="inline-flex items-center gap-2 rounded-full border border-sky-100 bg-white/80 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-sky-700 shadow-soft backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80 dark:text-sky-400">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-500" />
-            </span>
-            {siteConfig.location}
-          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <p className="inline-flex items-center gap-2 rounded-full border border-sky-100 bg-white/80 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-sky-700 shadow-soft backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80 dark:text-sky-400">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-500" />
+              </span>
+              {siteConfig.location}
+            </p>
+            <VisitorCounter />
+          </div>
           <h1 className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink dark:text-slate-100 md:text-6xl">
             {t.hero.greeting}{" "}
             <span className="text-gradient">{siteConfig.name}</span>
