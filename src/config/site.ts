@@ -13,19 +13,26 @@ export const siteConfig = {
   excludedProjectSlugs: ["qrverification", "portfolio"] as string[],
   avatar: "/profile.jpeg",
   story: [
-    "Merhaba, ben Şaban Akçehre. 23 yaşındayım ve Antalya doğumluyum. Teknolojiye ve yazılıma olan ilgim lise yıllarında, sınıf öğretmenimin bana hediye ettiği Steve Jobs kitabıyla başladı. O günden beri üretmek, kendimi geliştirmek ve başladığım bir hedefi tamamlamak benim için büyük bir motivasyon kaynağı oldu.",
-    "Şu anda Atatürk Üniversitesi Bilgisayar Mühendisliği bölümünde öğrenim görüyorum ve yaklaşık 1 ay içinde mezun oluyorum. Algoritmalar, web teknolojileri ve yazılım geliştirme alanlarında kendimi geliştirmeye devam ediyorum. Yeni teknolojiler öğrenmeyi, proje üretmeyi ve ekip içinde sosyal iletişim kurmayı seviyorum.",
-    "Şu anda staj ve yeni kariyer fırsatlarına açığım. Hayalim; dünyayı gezebilmek, refah içinde yaşayabilmek, gerçekten keyif aldığım ve üretirken mutlu olduğum bir iş yapmak ve iyi bir aile kurmak. Kendimi sürekli geliştirmemin en büyük sebeplerinden biri de, gelecekte kurmak istediğim hayatın temellerini bugünden oluşturmak.",
-  ],
+  "Merhaba, ben Şaban Akçehre. Bilgisayar mühendisliği öğrencisiyim ve şu anda staj ile yeni kariyer fırsatlarına açığım. Yazılım geliştirme, Mobil Uygulama Geliştirme ve kullanıcı odaklı projeler üretmek üzerine kendimi geliştirmeye devam ediyorum.",
+
+  "Teknolojiye ve yazılıma olan ilgim lise yıllarında, sınıf öğretmenimin bana hediye ettiği Steve Jobs kitabıyla başladı. O günden beri üretmek, yeni şeyler öğrenmek ve başladığım bir hedefi tamamlamak benim için büyük bir motivasyon kaynağı oldu.",
+
+  "Şu anda Atatürk Üniversitesi Bilgisayar Mühendisliği bölümünde öğrenim görüyorum ve yaklaşık 1 ay içinde mezun oluyorum. Algoritmalar, modern web teknolojileri ve yazılım geliştirme alanlarında çalışıyor; proje üretmeyi, yeni teknolojiler keşfetmeyi ve ekip içinde iletişim kurmayı seviyorum.",
+
+  "Hayalim; dünyayı gezebilmek, refah içinde yaşayabilmek, gerçekten keyif aldığım ve üretirken mutlu olduğum bir iş yapmak ve iyi bir aile kurmak. Kendimi sürekli geliştirmemin en büyük sebeplerinden biri de, gelecekte kurmak istediğim hayatın temellerini bugünden oluşturmak.",
+],
   skills: [
     "AI",
-    "C / C++",
-    "Flutter",
-    "Python",
-    "Firebase",
-    "Node.js",
-    "Git",
     "Kotlin",
+    "Flutter",
+     "Firebase",
+     "Node.js",
+    "Python",
+    "HTML, CSS, JavaScript",
+    "Git",
+    "Çeşitli API'ler (Google Maps, OpenAI, vb.)",
+    "C / C++ / C#",
+    "Vercel,Railway",
     "Veri Yapıları, Algoritmalar",
   ],
   social: {

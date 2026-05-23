@@ -16,7 +16,7 @@ export function About() {
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <AnimateIn delay={100}>
             <div className="card-modern space-y-5 !p-8">
-              {t.about.story.map((paragraph, i) => (
+              {siteConfig.story.map((paragraph, i) => (
                 <p
                   key={i}
                   className="leading-relaxed text-ink-muted first:text-lg first:font-medium first:text-ink dark:text-slate-400 dark:first:text-slate-100"

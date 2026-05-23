@@ -19,13 +19,13 @@ export function Gallery() {
           subtitle={t.gallery.subtitle}
         />
 
-        <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {galleryPhotos.map((photo, index) => (
             <AnimateIn key={photo.src} delay={index * 80} className="mb-5">
               <button
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className="card-modern group block w-full break-inside-avoid overflow-hidden !p-0 text-left"
+                className="card-modern group block w-full overflow-hidden !p-0 text-left"
               >
                 <div className="relative aspect-[4/3] w-full overflow-hidden">
                   <Image
