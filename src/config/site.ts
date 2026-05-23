@@ -10,7 +10,7 @@ export const siteConfig = {
   location: "Antalya, Türkiye",
   githubUsername: "SabanCE",
   /** Ana sayfa proje listesinde gösterilmeyecek repo slug'ları */
-  excludedProjectSlugs: ["qrverification"] as string[],
+  excludedProjectSlugs: ["qrverification", "portfolio"] as string[],
   avatar: "/profile.jpeg",
   story: [
     "Merhaba, ben Şaban Akçehre. 23 yaşındayım ve Antalya doğumluyum. Teknolojiye ve yazılıma olan ilgim lise yıllarında, sınıf öğretmenimin bana hediye ettiği Steve Jobs kitabıyla başladı. O günden beri üretmek, kendimi geliştirmek ve başladığım bir hedefi tamamlamak benim için büyük bir motivasyon kaynağı oldu.",

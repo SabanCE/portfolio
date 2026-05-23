@@ -105,16 +105,18 @@ export function ProjectDetailContent({
     case "aiyardimcim":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-900 shadow-card">
-            <video
-              controls
-              playsInline
-              preload="metadata"
+          <div className="overflow-hidden rounded-2xl border border-slate-200/80 shadow-card">
+            <iframe
+              width="100%"
+              height="600"
+              src="https://www.youtube.com/embed/vAuj451avUk?rel=0"
+              title="AI Yardımcım Projesi"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
               className="aspect-video w-full"
-            >
-              <source src="/video/Aiyardimcim.mp4" type="video/mp4" />
-              {t.projectPage.videoUnsupported}
-            </video>
+            />
           </div>
 
           <h2>Öne Çıkan Teknik Özellikler</h2>
@@ -185,16 +187,18 @@ export function ProjectDetailContent({
     case "restoranpos":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-900 shadow-card">
-            <video
-              controls
-              playsInline
-              preload="metadata"
+          <div className="overflow-hidden rounded-2xl border border-slate-200/80 shadow-card">
+            <iframe
+              width="100%"
+              height="600"
+              src="https://www.youtube.com/embed/J6llpaBRUQk?rel=0"
+              title="Restoran POS Otomasyonu Projesi"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
               className="aspect-video w-full"
-            >
-              <source src="/video/restoran.mp4" type="video/mp4" />
-              {t.projectPage.videoUnsupported}
-            </video>
+            />
           </div>
         </article>
       );
