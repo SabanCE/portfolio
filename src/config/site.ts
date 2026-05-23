@@ -20,6 +20,7 @@ export const siteConfig = {
   skills: [
     "AI",
     "C / C++",
+    "Flutter",
     "Python",
     "Firebase",
     "Node.js",
