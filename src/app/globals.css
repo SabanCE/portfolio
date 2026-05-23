@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-surface font-body text-ink antialiased transition-colors duration-300;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.15), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(139, 92, 246, 0.1), transparent),
+      radial-gradient(ellipse 50% 30% at 0% 100%, rgba(14, 165, 233, 0.08), transparent);
+  }
+
+  html.dark body {
+    @apply bg-slate-950 text-slate-100;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.12), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(139, 92, 246, 0.08), transparent),
+      radial-gradient(ellipse 50% 30% at 0% 100%, rgba(14, 165, 233, 0.06), transparent);
+  }
+
+  ::selection {
+    @apply bg-sky-200 text-ink;
+  }
+
+  html.dark ::selection {
+    @apply bg-sky-800 text-slate-100;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-sky-500 to-violet-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-500/40 active:translate-y-0 active:scale-[0.98];
+  }
+
+  .btn-primary::before {
+    content: "";
+    @apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700;
+  }
+
+  .btn-primary:hover::before {
+    @apply translate-x-full;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200/80 bg-white px-6 py-3 text-sm font-semibold text-ink shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-card hover:text-sky-600 active:scale-[0.98];
+  }
+
+  html.dark .btn-secondary {
+    @apply border-slate-700 bg-slate-800/90 text-slate-100 hover:border-sky-500 hover:text-sky-400;
+  }
+
+  .card-modern {
+    @apply rounded-2xl border border-slate-200/60 bg-white/80 p-6 shadow-soft backdrop-blur-sm transition-all duration-500 ease-out hover:-translate-y-2 hover:border-sky-200/80 hover:bg-white hover:shadow-card-hover;
+  }
+
+  html.dark .card-modern {
+    @apply border-slate-700/80 bg-slate-900/80 hover:border-sky-500/50 hover:bg-slate-900;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold tracking-tight text-ink md:text-4xl;
+  }
+
+  .blob {
+    @apply pointer-events-none absolute rounded-full blur-3xl;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-sky-600 via-violet-600 to-sky-500 bg-clip-text text-transparent;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .stagger-1 {
+    animation-delay: 80ms;
+  }
+  .stagger-2 {
+    animation-delay: 160ms;
+  }
+  .stagger-3 {
+    animation-delay: 240ms;
+  }
+  .stagger-4 {
+    animation-delay: 320ms;
+  }
+  .stagger-5 {
+    animation-delay: 400ms;
+  }
+  .stagger-6 {
+    animation-delay: 480ms;
+  }
+
+  .photo-frame {
+    @apply relative overflow-hidden rounded-3xl bg-white p-2 shadow-card ring-1 ring-slate-200/80 transition-all duration-500 hover:shadow-card-hover hover:ring-sky-200;
+  }
+
+  html.dark .photo-frame {
+    @apply bg-slate-800 ring-slate-700 hover:ring-sky-500;
+  }
+
+  .prose-blog p {
+    @apply leading-relaxed;
+  }
+
+  .prose-blog h2 {
+    @apply mt-8 font-display text-2xl font-bold text-ink;
+  }
+
+  .prose-blog h3 {
+    @apply mt-6 font-display text-xl font-semibold text-ink;
+  }
+
+  .prose-blog ul {
+    @apply list-disc space-y-2 pl-6;
+  }
+
+  .prose-blog a {
+    @apply text-sky-600 underline hover:text-sky-700;
+  }
+}
