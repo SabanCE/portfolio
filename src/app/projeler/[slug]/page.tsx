@@ -61,7 +61,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const t = getTranslations(locale);
   const { title, description } = getProjectDisplayInfo(slug, repo);
   const hideHeaderDescription =
-    slug === "snake-game-web" || slug === "flower-gift";
+    slug === "snake-game-web" ||
+    slug === "flower-gift" ||
+    slug === "autonomous-kmeans-architecture";
 
   return (
     <>

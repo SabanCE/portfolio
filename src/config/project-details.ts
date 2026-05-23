@@ -45,6 +45,10 @@ export const projectDetailOverrides: Record<
     title: "Flower Gift Animations",
     description: "HTML, CSS ve JS ile yapılmıştır.",
   },
+  "autonomous-kmeans-architecture": {
+    description:
+      "Akıllı K-Means Motoru: İnsan müdahalesi olmadan kümeleme parametrelerini optimize eden akıllı bir MATLAB algoritması.",
+  },
 };
 
 export function getProjectDisplayInfo(

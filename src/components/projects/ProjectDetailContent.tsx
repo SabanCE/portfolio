@@ -29,54 +29,157 @@ function ProjectDemoLink({
 }
 
 const chatappScreenshots = [
-  { src: "/screenshots/chatapp/login.jpeg", alt: "ChatApp giriş ekranı" },
-  { src: "/screenshots/chatapp/home.jpeg", alt: "ChatApp ana ekran" },
-  { src: "/screenshots/chatapp/onetoone.jpeg", alt: "ChatApp bire bir sohbet" },
-  { src: "/screenshots/chatapp/groupchat.jpeg", alt: "ChatApp grup sohbeti" },
-  { src: "/screenshots/chatapp/newgroup.jpeg", alt: "ChatApp yeni grup oluşturma" },
-  { src: "/screenshots/chatapp/settings.jpeg", alt: "ChatApp ayarlar ekranı" },
+  {
+    src: "/screenshots/chatapp/login.jpeg",
+    alt: "Giriş Sayfası",
+    caption: "Giriş Sayfası",
+  },
+  {
+    src: "/screenshots/chatapp/home.jpeg",
+    alt: "Ana Sayfa",
+    caption: "Ana Sayfa",
+  },
+  {
+    src: "/screenshots/chatapp/onetoone.jpeg",
+    alt: "Birebir Mesajlaşma",
+    caption: "Birebir Mesajlaşma",
+  },
+  {
+    src: "/screenshots/chatapp/groupchat.jpeg",
+    alt: "Grup Mesajlaşma",
+    caption: "Grup Mesajlaşma",
+  },
+  {
+    src: "/screenshots/chatapp/newgroup.jpeg",
+    alt: "Yeni Grup Oluşturma",
+    caption: "Yeni Grup Oluşturma",
+  },
+  {
+    src: "/screenshots/chatapp/settings.jpeg",
+    alt: "Ayarlar",
+    caption: "Ayarlar",
+  },
 ] as const;
 
 const gymScreenshots = [
-  { src: "/screenshots/gym/h1.png", alt: "GymTracking ana sayfa", width: 382, height: 829 },
-  { src: "/screenshots/gym/h2.png", alt: "GymTracking ana sayfa görünümü", width: 403, height: 831 },
-  { src: "/screenshots/gym/w1.png", alt: "GymTracking egzersiz takibi", width: 417, height: 854 },
-  { src: "/screenshots/gym/w2.png", alt: "GymTracking antrenman ekranı", width: 398, height: 840 },
-  { src: "/screenshots/gym/m1.png", alt: "GymTracking makro hesaplama", width: 401, height: 841 },
-  { src: "/screenshots/gym/p1.png", alt: "GymTracking ilerleme izleme", width: 398, height: 851 },
-  { src: "/screenshots/gym/g1.png", alt: "GymTracking genel görünüm", width: 412, height: 835 },
-  { src: "/screenshots/gym/np1.png", alt: "GymTracking yeni program", width: 422, height: 859 },
+  {
+    src: "/screenshots/gym/h1.png",
+    alt: "GymTracking ana sayfa",
+    caption: "Ana Sayfa",
+    width: 382,
+    height: 829,
+  },
+  {
+    src: "/screenshots/gym/h2.png",
+    alt: "GymTracking ana sayfa görünümü",
+    caption: "Ana Sayfa Görünümü",
+    width: 403,
+    height: 831,
+  },
+  {
+    src: "/screenshots/gym/w1.png",
+    alt: "GymTracking egzersiz takibi",
+    caption: "Egzersiz Takibi",
+    width: 417,
+    height: 854,
+  },
+  {
+    src: "/screenshots/gym/w2.png",
+    alt: "GymTracking antrenman ekranı",
+    caption: "Antrenman Detayları",
+    width: 398,
+    height: 840,
+  },
+  {
+    src: "/screenshots/gym/m1.png",
+    alt: "GymTracking makro hesaplama",
+    caption: "Makro Hesaplama",
+    width: 401,
+    height: 841,
+  },
+  {
+    src: "/screenshots/gym/p1.png",
+    alt: "GymTracking ilerleme izleme",
+    caption: "İlerleme Takibi",
+    width: 398,
+    height: 851,
+  },
+  {
+    src: "/screenshots/gym/g1.png",
+    alt: "GymTracking genel görünüm",
+    caption: "Genel Görünüm",
+    width: 412,
+    height: 835,
+  },
+  {
+    src: "/screenshots/gym/np1.png",
+    alt: "GymTracking yeni program",
+    caption: "Yeni Program",
+    width: 422,
+    height: 859,
+  },
 ] as const;
 
 const zirveScreenshots = [
   {
     src: "/screenshots/egz/1777465641258.jfif",
     alt: "Çekiliş sayfası ekran görüntüsü 1",
+    caption: "Ana Sayfa ve Kullanıcı Etkileşimi",
     width: 1280,
     height: 608,
   },
   {
     src: "/screenshots/egz/1777465641349.jfif",
     alt: "Çekiliş sayfası ekran görüntüsü 2",
+    caption: "Form ve Canlı Katılım",
     width: 1280,
     height: 603,
   },
   {
     src: "/screenshots/egz/1777465641517.jfif",
     alt: "Çekiliş sayfası ekran görüntüsü 3",
+    caption: "Sonuç ve Kazanan Bildirimi",
     width: 1280,
     height: 608,
   },
 ] as const;
 
 const kampusScreenshots = [
-  { src: "/screenshots/kampus/giris.jpeg", alt: "Kampüs Güvende giriş ekranı" },
-  { src: "/screenshots/kampus/anaekran.jpeg", alt: "Kampüs Güvende ana ekran" },
-  { src: "/screenshots/kampus/acildurum.jpeg", alt: "Kampüs Güvende acil durum bildirimi" },
-  { src: "/screenshots/kampus/harita.jpeg", alt: "Kampüs Güvende harita görünümü" },
-  { src: "/screenshots/kampus/bildirimdetay.jpeg", alt: "Kampüs Güvende bildirim detayı" },
-  { src: "/screenshots/kampus/adminpanel.jpeg", alt: "Kampüs Güvende admin paneli" },
-  { src: "/screenshots/kampus/ayarlar.jpeg", alt: "Kampüs Güvende ayarlar" },
+  {
+    src: "/screenshots/kampus/giris.jpeg",
+    alt: "Kampüs Güvende giriş ekranı",
+    caption: "Giriş Ekranı",
+  },
+  {
+    src: "/screenshots/kampus/anaekran.jpeg",
+    alt: "Kampüs Güvende ana ekran",
+    caption: "Ana Sayfa",
+  },
+  {
+    src: "/screenshots/kampus/acildurum.jpeg",
+    alt: "Kampüs Güvende acil durum bildirimi",
+    caption: "Acil Durum Bildirimi",
+  },
+  {
+    src: "/screenshots/kampus/harita.jpeg",
+    alt: "Kampüs Güvende harita görünümü",
+    caption: "Harita Görünümü",
+  },
+  {
+    src: "/screenshots/kampus/bildirimdetay.jpeg",
+    alt: "Kampüs Güvende bildirim detayı",
+    caption: "Bildirim Detayı",
+  },
+  {
+    src: "/screenshots/kampus/adminpanel.jpeg",
+    alt: "Kampüs Güvende admin paneli",
+    caption: "Admin Paneli",
+  },
+  {
+    src: "/screenshots/kampus/ayarlar.jpeg",
+    alt: "Kampüs Güvende ayarlar",
+    caption: "Ayarlar",
+  },
 ] as const;
 
 /**
@@ -235,19 +338,24 @@ export function ProjectDetailContent({
     case "chatapp":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
             {chatappScreenshots.map((shot) => (
               <div
                 key={shot.src}
-                className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3 shadow-card"
+                className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-4 shadow-card transition hover:-translate-y-1 hover:shadow-2xl"
               >
-                <Image
-                  src={shot.src}
-                  alt={shot.alt}
-                  width={921}
-                  height={2048}
-                  className="mx-auto h-auto w-full max-w-xs rounded-xl"
-                />
+                <div className="overflow-hidden rounded-3xl bg-slate-950/5">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={640}
+                    height={1420}
+                    className="h-auto w-full rounded-3xl object-cover"
+                  />
+                </div>
+                <p className="mt-4 text-center text-sm font-semibold text-slate-900 dark:text-slate-100">
+                  {shot.caption}
+                </p>
               </div>
             ))}
           </div>
@@ -257,19 +365,24 @@ export function ProjectDetailContent({
     case "gymtracking":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
             {gymScreenshots.map((shot) => (
               <div
                 key={shot.src}
-                className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3 shadow-card"
+                className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-4 shadow-card transition hover:-translate-y-1 hover:shadow-2xl"
               >
-                <Image
-                  src={shot.src}
-                  alt={shot.alt}
-                  width={shot.width}
-                  height={shot.height}
-                  className="mx-auto h-auto w-full max-w-xs rounded-xl"
-                />
+                <div className="overflow-hidden rounded-3xl bg-slate-950/5">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.width}
+                    height={shot.height}
+                    className="h-auto w-full rounded-3xl object-cover"
+                  />
+                </div>
+                <p className="mt-4 text-center text-sm font-semibold text-slate-900 dark:text-slate-100">
+                  {shot.caption}
+                </p>
               </div>
             ))}
           </div>
@@ -279,20 +392,25 @@ export function ProjectDetailContent({
     case "zirve2":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="grid gap-6">
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
             {zirveScreenshots.map((shot) => (
               <div
                 key={shot.src}
-                className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3 shadow-card"
+                className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-4 shadow-card transition hover:-translate-y-1 hover:shadow-2xl"
               >
-                <Image
-                  src={shot.src}
-                  alt={shot.alt}
-                  width={shot.width}
-                  height={shot.height}
-                  unoptimized
-                  className="h-auto w-full rounded-xl"
-                />
+                <div className="overflow-hidden rounded-3xl bg-slate-950/5">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.width}
+                    height={shot.height}
+                    unoptimized
+                    className="h-auto w-full rounded-3xl object-cover"
+                  />
+                </div>
+                <p className="mt-4 text-center text-sm font-semibold text-slate-900 dark:text-slate-100">
+                  {shot.caption}
+                </p>
               </div>
             ))}
           </div>
@@ -309,19 +427,24 @@ export function ProjectDetailContent({
             <li>Google Maps SDK</li>
           </ul>
 
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
             {kampusScreenshots.map((shot) => (
               <div
                 key={shot.src}
-                className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3 shadow-card"
+                className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-4 shadow-card transition hover:-translate-y-1 hover:shadow-2xl"
               >
-                <Image
-                  src={shot.src}
-                  alt={shot.alt}
-                  width={720}
-                  height={1600}
-                  className="mx-auto h-auto w-full max-w-xs rounded-xl"
-                />
+                <div className="overflow-hidden rounded-3xl bg-slate-950/5">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={720}
+                    height={1600}
+                    className="h-auto w-full rounded-3xl object-cover"
+                  />
+                </div>
+                <p className="mt-4 text-center text-sm font-semibold text-slate-900 dark:text-slate-100">
+                  {shot.caption}
+                </p>
               </div>
             ))}
           </div>
@@ -346,14 +469,9 @@ export function ProjectDetailContent({
     case "autonomous-kmeans-architecture":
       return (
         <article className="prose-blog text-ink-muted dark:text-slate-400">
-          <a
-            href={repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary !text-sm no-underline"
-          >
-            {t.projectPage.openGithub}
-          </a>
+          <p>
+            Akıllı K-Means Motoru: İnsan müdahalesi olmadan kümeleme parametrelerini optimize eden akıllı bir MATLAB algoritması.
+          </p>
         </article>
       );
 
