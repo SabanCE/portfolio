@@ -63,7 +63,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const hideHeaderDescription =
     slug === "snake-game-web" ||
     slug === "flower-gift" ||
-    slug === "autonomous-kmeans-architecture";
+    slug === "autonomous-kmeans-architecture" ||
+    slug === "deprembitirmeprojesi";
 
   return (
     <>

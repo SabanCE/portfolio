@@ -19,7 +19,9 @@ export function About() {
               {siteConfig.story.map((paragraph, i) => (
                 <p
                   key={i}
-                  className="leading-relaxed text-ink-muted first:text-lg first:font-medium first:text-ink dark:text-slate-400 dark:first:text-slate-100"
+                  className={`leading-relaxed text-ink-muted ${
+                    i < 2 ? "text-lg font-bold text-ink dark:text-slate-100" : "dark:text-slate-400"
+                  }`}
                 >
                   {paragraph}
                 </p>

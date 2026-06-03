@@ -41,10 +41,10 @@ export function VisitorCounter() {
   return (
     <div className="rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-sm font-medium text-slate-900 shadow-soft backdrop-blur dark:border-slate-700 dark:bg-slate-950/80 dark:text-slate-200">
       {error
-        ? "Ziyaret sayacı yüklenemedi"
+        ? "Dijital ayak izi yüklenemedi"
         : count === null
-        ? "Ziyaretçi sayısı hesaplanıyor..."
-        : `${count.toLocaleString("tr-TR")} ziyaretçi`}
+        ? "Dijital ayak izi hesaplanıyor..."
+        : `${count.toLocaleString("tr-TR")} dijital ayak izi`}
     </div>
   );
 }

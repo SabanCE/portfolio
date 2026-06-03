@@ -45,8 +45,8 @@ export function Hero() {
               {t.hero.viewProjects}
               <span aria-hidden>→</span>
             </a>
-            <a href="#galeri" className="btn-secondary">
-              {t.hero.photoArchive}
+            <a href="#hakkimda" className="btn-secondary">
+              {t.hero.about}
             </a>
           </div>
         </div>

@@ -3,6 +3,70 @@
 import { useLocale } from "@/components/providers/LocaleProvider";
 import { getProjectDisplayInfo } from "@/config/project-details";
 import Image from "next/image";
+import { useState } from "react";
+
+type ScreenshotItem = {
+  src: string;
+  alt: string;
+  caption: string;
+  width?: number;
+  height?: number;
+};
+
+function ScreenshotCarousel({
+  items,
+  maxWidth = 360,
+  imageWidth = 360,
+  imageHeight = 630,
+}: {
+  items: readonly ScreenshotItem[];
+  maxWidth?: number;
+  imageWidth?: number;
+  imageHeight?: number;
+}) {
+  const [index, setIndex] = useState(0);
+  const item = items[index];
+  return (
+    <div
+      style={{ maxWidth: `${maxWidth}px` }}
+      className="mx-auto w-full space-y-4 rounded-3xl border border-slate-200/80 bg-white p-3 shadow-card"
+    >
+      <div className="overflow-hidden rounded-3xl bg-slate-950/5">
+        <Image
+          src={item.src}
+          alt={item.alt}
+          width={imageWidth}
+          height={imageHeight}
+          className="h-auto w-full object-contain"
+        />
+      </div>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+          {item.caption}
+        </p>
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setIndex((prev) => (prev - 1 + items.length) % items.length)}
+            className="btn-secondary !py-2 !px-4"
+          >
+            Geri
+          </button>
+          <button
+            type="button"
+            onClick={() => setIndex((prev) => (prev + 1) % items.length)}
+            className="btn-secondary !py-2 !px-4"
+          >
+            İleri
+          </button>
+          <span className="text-xs text-slate-500 dark:text-slate-400">
+            {index + 1} / {items.length}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function ProjectDemoLink({
   description,
@@ -13,13 +77,15 @@ function ProjectDemoLink({
   href: string;
   label: string;
 }) {
+  const isExternal = href.startsWith("http");
+
   return (
     <div className="rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-violet-950 p-8 shadow-card">
       <p className="text-lg leading-relaxed text-white">{description}</p>
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         className="btn-primary mt-6 inline-flex !text-sm !text-white no-underline hover:!text-white"
       >
         {label}
@@ -182,6 +248,85 @@ const kampusScreenshots = [
   },
 ] as const;
 
+const depremzedeScreenshots = [
+  {
+    src: "/deprem/depremzede/1-anasayfa.jpeg",
+    alt: "Depremzede paneli ana sayfa ekran görüntüsü",
+    caption: "Ana Sayfa ve acil haberleşme arayüzü",
+  },
+  {
+    src: "/deprem/depremzede/2-offline toplanma alanı bulma.jpeg",
+    alt: "Depremzede paneli offline toplanma alanı bulma ekran görüntüsü",
+    caption: "Offline toplanma alanı bulma özelliği",
+  },
+  {
+    src: "/deprem/depremzede/3-ai danışman.jpeg",
+    alt: "Depremzede paneli yapay zekâ destekli danışman ekran görüntüsü",
+    caption: "Yapay zekâ destekli öneri ve rehberlik",
+  },
+  {
+    src: "/deprem/depremzede/4-haberleşme.jpeg",
+    alt: "Depremzede paneli haberleşme ekran görüntüsü",
+    caption: "Mesajlaşma ve iletişim ekranı",
+  },
+  {
+    src: "/deprem/depremzede/5-haberleşme.jpeg",
+    alt: "Depremzede paneli ikinci haberleşme ekran görüntüsü",
+    caption: "Bluetooth/Wi-Fi Mesh üzerinden iletişim",
+  },
+] as const;
+
+const koordineScreenshots = [
+  {
+    src: "/deprem/koordine/1-anasayfa.jpeg",
+    alt: "Koordine paneli ana sayfa ekran görüntüsü",
+    caption: "Ana Koordine kontrol paneli",
+  },
+  {
+    src: "/deprem/koordine/2-map.jpeg",
+    alt: "Koordine paneli harita ekran görüntüsü",
+    caption: "Kurtarma ekiplerinin harita görünümü",
+  },
+  {
+    src: "/deprem/koordine/3-lojistik sevk.jpeg",
+    alt: "Koordine paneli lojistik sevk ekran görüntüsü",
+    caption: "Lojistik sevk ve kaynak dağıtımı",
+  },
+  {
+    src: "/deprem/koordine/4-kurtarma ekibi sevk.jpeg",
+    alt: "Koordine paneli kurtarma ekibi sevk ekran görüntüsü",
+    caption: "Kurtarma ekibi sevk yönetimi",
+  },
+  {
+    src: "/deprem/koordine/5-sağlık sevk.jpeg",
+    alt: "Koordine paneli sağlık sevk ekran görüntüsü",
+    caption: "Acil sağlık sevk koordinasyonu",
+  },
+] as const;
+
+const personelScreenshots = [
+  {
+    src: "/deprem/personel/1-anasayfa.jpeg",
+    alt: "Personel paneli ana sayfa ekran görüntüsü",
+    caption: "Personel yönetimi ana sayfası",
+  },
+  {
+    src: "/deprem/personel/2-gecmis kayitlar.jpeg",
+    alt: "Personel paneli geçmiş kayıtlar ekran görüntüsü",
+    caption: "Geçmiş kayıtlar ve durum geçmişi",
+  },
+  {
+    src: "/deprem/personel/3-map.jpeg",
+    alt: "Personel paneli harita ekran görüntüsü",
+    caption: "Personel hareketlerinin harita takibi",
+  },
+  {
+    src: "/deprem/personel/4-koordinesyon.jpeg",
+    alt: "Personel paneli koordinasyon ekran görüntüsü",
+    caption: "Takım koordinasyon ve görev dağılımı",
+  },
+] as const;
+
 /**
  * Proje detay içeriklerini buraya ekleyin. *
  * Her proje için `slug` değerine göre bir `case` yazın.
@@ -327,93 +472,45 @@ export function ProjectDetailContent({
         description: null,
       });
       return (
-        <ProjectDemoLink
-          description={description}
-          href="https://sabance.github.io/snake-game-web/"
-          label="Oyunu oyna →"
-        />
+        <article className="prose-blog space-y-6 text-ink-muted">
+          <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-black shadow-card">
+            <iframe
+              src="https://sabance.github.io/snake-game-web/"
+              title="Snake Game"
+              className="aspect-[16/10] w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+          <p className="text-sm text-ink-muted dark:text-slate-400">{description}</p>
+        </article>
       );
     }
 
     case "chatapp":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-            {chatappScreenshots.map((shot) => (
-              <div
-                key={shot.src}
-                className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-4 shadow-card transition hover:-translate-y-1 hover:shadow-2xl"
-              >
-                <div className="overflow-hidden rounded-3xl bg-slate-950/5">
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    width={640}
-                    height={1420}
-                    className="h-auto w-full rounded-3xl object-cover"
-                  />
-                </div>
-                <p className="mt-4 text-center text-sm font-semibold text-slate-900 dark:text-slate-100">
-                  {shot.caption}
-                </p>
-              </div>
-            ))}
-          </div>
+          <ScreenshotCarousel items={chatappScreenshots} />
         </article>
       );
 
     case "gymtracking":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-            {gymScreenshots.map((shot) => (
-              <div
-                key={shot.src}
-                className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-4 shadow-card transition hover:-translate-y-1 hover:shadow-2xl"
-              >
-                <div className="overflow-hidden rounded-3xl bg-slate-950/5">
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    width={shot.width}
-                    height={shot.height}
-                    className="h-auto w-full rounded-3xl object-cover"
-                  />
-                </div>
-                <p className="mt-4 text-center text-sm font-semibold text-slate-900 dark:text-slate-100">
-                  {shot.caption}
-                </p>
-              </div>
-            ))}
-          </div>
+          <ScreenshotCarousel items={gymScreenshots} />
         </article>
       );
 
     case "zirve2":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-            {zirveScreenshots.map((shot) => (
-              <div
-                key={shot.src}
-                className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-4 shadow-card transition hover:-translate-y-1 hover:shadow-2xl"
-              >
-                <div className="overflow-hidden rounded-3xl bg-slate-950/5">
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    width={shot.width}
-                    height={shot.height}
-                    unoptimized
-                    className="h-auto w-full rounded-3xl object-cover"
-                  />
-                </div>
-                <p className="mt-4 text-center text-sm font-semibold text-slate-900 dark:text-slate-100">
-                  {shot.caption}
-                </p>
-              </div>
-            ))}
-          </div>
+          <ScreenshotCarousel
+            items={zirveScreenshots}
+            maxWidth={900}
+            imageWidth={880}
+            imageHeight={420}
+          />
         </article>
       );
 
@@ -427,26 +524,74 @@ export function ProjectDetailContent({
             <li>Google Maps SDK</li>
           </ul>
 
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-            {kampusScreenshots.map((shot) => (
-              <div
-                key={shot.src}
-                className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-4 shadow-card transition hover:-translate-y-1 hover:shadow-2xl"
-              >
-                <div className="overflow-hidden rounded-3xl bg-slate-950/5">
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    width={720}
-                    height={1600}
-                    className="h-auto w-full rounded-3xl object-cover"
-                  />
-                </div>
-                <p className="mt-4 text-center text-sm font-semibold text-slate-900 dark:text-slate-100">
-                  {shot.caption}
-                </p>
+          <ScreenshotCarousel items={kampusScreenshots} />
+        </article>
+      );
+
+    case "deprembitirmeprojesi":
+      return (
+        <article className="prose-blog space-y-6 text-ink-muted">
+          <p>
+            Deprem ve afet durumlarında iletişim altyapılarının devre dışı kalması
+            halinde mağdurlar ile kurtarma ekipleri arasında kesintisiz haberleşme
+            sağlamayı amaçlayan Android tabanlı bir mobil platform geliştirdim.
+          </p>
+          <p>
+            Uygulama; cihaz sensörlerinden elde edilen verileri analiz ederek olası
+            deprem hareketlerini tespit etmekte, STA/LTA algoritmaları ile sismik
+            aktiviteleri değerlendirmekte ve yanlış alarmları azaltmak için
+            güvenilirlik skorları oluşturmaktadır.
+          </p>
+          <p>
+            Sistem, Bluetooth ve Wi-Fi destekli <strong>Mesh Network</strong> yapısı
+            sayesinde internet olmadan cihazlar arasında mesajlaşma imkânı
+            sunmaktadır. Ayrıca konum paylaşımı, acil durum bildirimleri, yapay
+            zekâ destekli öneriler ve kurtarma ekipleri için yoğunluk haritaları ile
+            risk analizleri sağlayarak afet yönetimi süreçlerini desteklemektedir.
+          </p>
+
+          <h2>Kullanılan Teknolojiler</h2>
+          <ul>
+            <li>Kotlin</li>
+            <li>MVVM</li>
+            <li>Coroutines</li>
+            <li>Flow</li>
+            <li>Google Nearby Connections API</li>
+            <li>Mesh Networking</li>
+            <li>Room Database</li>
+            <li>Firebase (Firestore &amp; Authentication)</li>
+            <li>Google Gemini AI</li>
+            <li>Google Maps SDK</li>
+            <li>MapLibre</li>
+            <li>Android Sensor Framework</li>
+            <li>MPAndroidChart</li>
+            <li>STA/LTA Algoritması</li>
+            <li>WorkManager</li>
+            <li>Material Design Components</li>
+          </ul>
+
+          <h2>Ekran Görüntüleri</h2>
+          <div className="space-y-12">
+            <section>
+              <h3 className="text-lg font-semibold">1. Depremzede Paneli</h3>
+              <div className="mt-5">
+                <ScreenshotCarousel items={depremzedeScreenshots} />
               </div>
-            ))}
+            </section>
+
+            <section>
+              <h3 className="text-lg font-semibold">2. Koordine Paneli</h3>
+              <div className="mt-5">
+                <ScreenshotCarousel items={koordineScreenshots} />
+              </div>
+            </section>
+
+            <section>
+              <h3 className="text-lg font-semibold">3. Personel Paneli</h3>
+              <div className="mt-5">
+                <ScreenshotCarousel items={personelScreenshots} />
+              </div>
+            </section>
           </div>
         </article>
       );
@@ -481,11 +626,19 @@ export function ProjectDetailContent({
         description: null,
       });
       return (
-        <ProjectDemoLink
-          description={description}
-          href="https://sabance.github.io/flower-gift/"
-          label="Projeyi görüntüle →"
-        />
+        <article className="prose-blog space-y-6 text-ink-muted">
+          <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-black shadow-card">
+            <iframe
+              src="https://sabance.github.io/flower-gift/"
+              title="Flower Gift Animations"
+              className="aspect-[16/10] w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+          <p className="text-sm text-ink-muted dark:text-slate-400">{description}</p>
+        </article>
       );
     }
 

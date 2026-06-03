@@ -7,31 +7,38 @@ export const siteConfig = {
   title: "Bilgisayar Mühendisi",
   tagline: "Android Developer Enthusiast",
   email: "xsabanakcehre@gmail.com",
-  location: "Antalya, Türkiye",
+  location: "Antalya-Erzurum,Türkiye",
   githubUsername: "SabanCE",
 
   /** Ana sayfa proje listesinde gösterilmeyecek repo slug'ları */
-  excludedProjectSlugs: ["qrverification", "portfolio"] as string[],
+  excludedProjectSlugs: [
+    "qrverification",
+    "portfolio",
+    "yasamskoru",
+    "notebook-kotlin-app",
+    "matlab-control-system",
+    "node-auth-app",
+  ] as string[],
 
   /** Öne çıkan ana projeler */
-  /** Öne çıkan ana projeler */
-featuredProjectSlugs: [
-  "aiyardimcim",
-  "restoranpos",
-  "chatapp",
-  "gymtracking",
-  "zirve2",
-  "mobilprogramlamaproje",
-] as readonly string[],
+  featuredProjectSlugs: [
+    "aiyardimcim",
+    "restoranpos",
+    "chatapp",
+    "gymtracking",
+    "zirve2",
+    "mobilprogramlamaproje",
+    "deprembitirmeprojesi",
+  ] as readonly string[],
 
   avatar: "/profile.jpeg",
 
   story: [
     "Merhaba, ben Şaban Akçehre. Bilgisayar mühendisliği öğrencisiyim ve şu anda staj ile yeni kariyer fırsatlarına açığım. Yazılım geliştirme, Mobil Uygulama Geliştirme ve kullanıcı odaklı projeler üretmek üzerine kendimi geliştirmeye devam ediyorum.",
 
-    "Teknolojiye ve yazılıma olan ilgim lise yıllarında, sınıf öğretmenimin bana hediye ettiği Steve Jobs kitabıyla başladı. O günden beri üretmek, yeni şeyler öğrenmek ve başladığım bir hedefi tamamlamak benim için büyük bir motivasyon kaynağı oldu.",
-
     "Şu anda Atatürk Üniversitesi Bilgisayar Mühendisliği bölümünde öğrenim görüyorum ve yaklaşık 1 ay içinde mezun oluyorum. Algoritmalar, modern web teknolojileri ve yazılım geliştirme alanlarında çalışıyor; proje üretmeyi, yeni teknolojiler keşfetmeyi ve ekip içinde iletişim kurmayı seviyorum.",
+
+    "Teknolojiye ve yazılıma olan ilgim lise yıllarında, sınıf öğretmenimin bana hediye ettiği Steve Jobs kitabıyla başladı. O günden beri üretmek, yeni şeyler öğrenmek ve başladığım bir hedefi tamamlamak benim için büyük bir motivasyon kaynağı oldu.",
 
     "Hayalim; dünyayı gezebilmek, refah içinde yaşayabilmek, gerçekten keyif aldığım ve üretirken mutlu olduğum bir iş yapmak ve iyi bir aile kurmak. Kendimi sürekli geliştirmemin en büyük sebeplerinden biri de, gelecekte kurmak istediğim hayatın temellerini bugünden oluşturmak.",
   ],

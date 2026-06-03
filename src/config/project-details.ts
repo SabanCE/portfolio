@@ -41,6 +41,11 @@ export const projectDetailOverrides: Record<
     description:
       "Kotlin ile geliştirilmiş, kampüs hayatını kolaylaştırmak için tasarlanmış bir mobil uygulama. Öğrencilerin kayıp eşyaları, acil durumları, güvenlik risklerini, teknik sorunları ve sağlık problemlerini birkaç dokunuşla bildirmelerini sağlıyor. Kampüs içi iletişimi daha hızlı, daha güvenli ve daha verimli hale getirmek için geliştirildi.",
   },
+  deprembitirmeprojesi: {
+    title: "Afet Haberleşme ve Erken Uyarı Sistemi",
+    description:
+      "Deprem ve afet durumlarında iletişim altyapılarının devre dışı kalması halinde mağdurlar ile kurtarma ekipleri arasında kesintisiz haberleşme sağlamayı amaçlayan Android tabanlı bir mobil platform geliştirdim. Uygulama; cihaz sensörlerinden elde edilen verileri analiz ederek olası deprem hareketlerini tespit etmekte, STA/LTA algoritmaları ile sismik aktiviteleri değerlendirmekte ve yanlış alarmları azaltmak için güvenilirlik skorları oluşturmaktadır. Sistem, Bluetooth ve Wi-Fi destekli Mesh Network yapısı sayesinde internet olmadan cihazlar arasında mesajlaşma imkânı sunmaktadır. Ayrıca konum paylaşımı, acil durum bildirimleri, yapay zekâ destekli öneriler ve kurtarma ekipleri için yoğunluk haritaları ile risk analizleri sağlayarak afet yönetimi süreçlerini desteklemektedir.",
+  },
   "flower-gift": {
     title: "Flower Gift Animations",
     description: "HTML, CSS ve JS ile yapılmıştır.",

@@ -15,7 +15,7 @@ export type TranslationKey = {
   hero: {
     greeting: string;
     viewProjects: string;
-    photoArchive: string;
+    about: string;
   };
   about: {
     title: string;
@@ -90,7 +90,7 @@ const tr: TranslationKey = {
   hero: {
     greeting: "Merhaba, ben",
     viewProjects: "Projeleri gör",
-    photoArchive: "Fotoğraf arşivi",
+    about: "Hakkımda",
   },
   about: {
     title: "Hakkımda",
@@ -171,7 +171,7 @@ const en: TranslationKey = {
   hero: {
     greeting: "Hi, I'm",
     viewProjects: "View projects",
-    photoArchive: "Photo archive",
+    about: "About",
   },
   about: {
     title: "About",
