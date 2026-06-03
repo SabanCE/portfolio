@@ -20,17 +20,18 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
       if (killed) return;
 
       ctx = gsap.context(() => {
-        gsap.defaults({ ease: "power3.out" });
+        const timeline = gsap.timeline();
+        timeline.defaults({ ease: "power3.out" });
 
         // Header/nav entrance
-        gsap.from(
+        timeline.from(
           "header a, header .btn-primary, header button",
           { y: -8, opacity: 0, duration: 0.6, stagger: 0.04, delay: 0.12 },
           0
         );
 
         // Hero name (site title) entrance
-        gsap.from(
+        timeline.from(
           ".hero-name",
           {
             y: 60,
@@ -43,7 +44,7 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
         );
 
         // Initial stagger for elements in viewport
-        gsap.from(
+        timeline.from(
           "[data-animate]",
           {
             y: 18,
