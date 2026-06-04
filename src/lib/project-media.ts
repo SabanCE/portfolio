@@ -7,6 +7,8 @@ export type ProjectMediaItem = {
   height?: number;
 };
 
+const iconPath = (filename: string) => `/proje_icon/${encodeURI(filename)}`;
+
 const chatappScreenshots: ProjectMediaItem[] = [
   { type: "image", src: "/screenshots/chatapp/login.jpeg", alt: "Giriş Sayfası", caption: "Giriş Sayfası" },
   { type: "image", src: "/screenshots/chatapp/home.jpeg", alt: "Ana Sayfa", caption: "Ana Sayfa" },
@@ -46,6 +48,12 @@ const kampusScreenshots: ProjectMediaItem[] = [
 const projectMediaMap: Record<string, ProjectMediaItem[]> = {
   aiyardimcim: [
     {
+      type: "image",
+      src: iconPath("ai.png"),
+      alt: "AI Yardımcım Proje Ikonu",
+      caption: "Proje Önizleme Görseli",
+    },
+    {
       type: "youtube",
       src: "https://www.youtube.com/embed/vAuj451avUk?rel=0",
       alt: "AI Yardımcım Projesi",
@@ -54,16 +62,18 @@ const projectMediaMap: Record<string, ProjectMediaItem[]> = {
   ],
   restoranpos: [
     {
-      type: "youtube",
-      src: "https://www.youtube.com/embed/J6llpaBRUQk?rel=0",
+      type: "image",
+      src: "/proje_icon/restoran.jpg",
       alt: "Restoran POS Otomasyonu",
-      caption: "Demo Video",
+      caption: "Demo Görseli",
+      width: 900,
+      height: 600,
     },
   ],
   "calculator-kotlin": [
     {
       type: "image",
-      src: "/screenshots/calculator.png",
+      src: "/proje_icon/calculator.png",
       alt: "Calculator Mobile App",
       caption: "Hesap Makinesi",
       width: 386,
@@ -72,27 +82,79 @@ const projectMediaMap: Record<string, ProjectMediaItem[]> = {
   ],
   "snake-game-web": [
     {
+      type: "image",
+      src: iconPath("snake.png"),
+      alt: "Snake Game Proje Ikonu",
+      caption: "Proje Önizleme Görseli",
+    },
+    {
       type: "iframe",
       src: "https://sabance.github.io/snake-game-web/",
       alt: "Snake Game",
       caption: "Canlı Demo",
     },
   ],
-  chatapp: chatappScreenshots,
-  gymtracking: gymScreenshots,
-  zirve2: zirveScreenshots,
-  mobilprogramlamaproje: kampusScreenshots,
+  chatapp: [
+    {
+      type: "image",
+      src: iconPath("chatapp.png"),
+      alt: "ChatApp Proje Ikonu",
+      caption: "Proje Önizleme Görseli",
+    },
+    ...chatappScreenshots,
+  ],
+  gymtracking: [
+    {
+      type: "image",
+      src: iconPath("gym.png"),
+      alt: "GymTracking Proje Ikonu",
+      caption: "Proje Önizleme Görseli",
+    },
+    ...gymScreenshots,
+  ],
+  zirve2: [
+    {
+      type: "image",
+      src: iconPath("çekiliş.png"),
+      alt: "Zirve Proje Ikonu",
+      caption: "Proje Önizleme Görseli",
+    },
+    ...zirveScreenshots,
+  ],
+  mobilprogramlamaproje: [
+    {
+      type: "image",
+      src: iconPath("kampüs güvende.png"),
+      alt: "Kampüs Güvende Proje Ikonu",
+      caption: "Proje Önizleme Görseli",
+    },
+    ...kampusScreenshots,
+  ],
+  deprembitirmeprojesi: [
+    {
+      type: "image",
+      src: iconPath("afet.png"),
+      alt: "Deprem Haberleşme Proje Ikonu",
+      caption: "Proje Önizleme Görseli",
+    },
+  ],
   databaseoperations: [
     {
       type: "image",
-      src: "/screenshots/gor.png",
-      alt: "Database Operations",
-      caption: "Uygulama Ekranı",
+      src: iconPath("database.png"),
+      alt: "Database Operations Proje Ikonu",
+      caption: "Proje Önizleme Görseli",
       width: 792,
       height: 626,
     },
   ],
   "flower-gift": [
+    {
+      type: "image",
+      src: iconPath("flowergift.png"),
+      alt: "Flower Gift Proje Ikonu",
+      caption: "Proje Önizleme Görseli",
+    },
     {
       type: "iframe",
       src: "https://sabance.github.io/flower-gift/",

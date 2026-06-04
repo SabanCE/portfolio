@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useLocale } from "@/components/providers/LocaleProvider";
 import Image from "next/image";
 import { galleryPhotos } from "@/config/gallery";
@@ -27,7 +28,13 @@ export function Gallery() {
                 onClick={() => setActiveIndex(index)}
                 className="card-modern group block w-full overflow-hidden !p-0 text-left"
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <motion.div
+                  className="relative aspect-[4/3] w-full overflow-hidden"
+                  initial={{ scale: 1, x: 0, y: 0 }}
+                  whileInView={{ scale: 1.08, x: -8, y: -6 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 24, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+                >
                   <Image
                     src={photo.src}
                     alt={photo.alt}
@@ -39,7 +46,7 @@ export function Gallery() {
                   <span className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-sky-600 opacity-0 shadow-md transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2">
                     {t.gallery.enlarge}
                   </span>
-                </div>
+                </motion.div>
                 {photo.caption && (
                   <p className="border-t border-slate-100 px-4 py-3 text-xs text-ink-muted">
                     {photo.caption}

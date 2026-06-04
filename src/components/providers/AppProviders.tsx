@@ -3,6 +3,7 @@
 import type { Locale } from "@/i18n/translations";
 import { LocaleProvider } from "./LocaleProvider";
 import { ThemeProvider } from "./ThemeProvider";
+import { GlobalCursorBackground } from "@/components/GlobalCursorBackground";
 
 export function AppProviders({
   children,
@@ -13,7 +14,10 @@ export function AppProviders({
 }) {
   return (
     <ThemeProvider>
-      <LocaleProvider initialLocale={initialLocale}>{children}</LocaleProvider>
+      <LocaleProvider initialLocale={initialLocale}>
+        <GlobalCursorBackground />
+        {children}
+      </LocaleProvider>
     </ThemeProvider>
   );
 }

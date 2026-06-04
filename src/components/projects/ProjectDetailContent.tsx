@@ -37,7 +37,7 @@ function ScreenshotCarousel({
           alt={item.alt}
           width={imageWidth}
           height={imageHeight}
-          className="h-auto w-full object-contain"
+          className="block h-auto w-full object-contain"
         />
       </div>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -435,17 +435,13 @@ export function ProjectDetailContent({
     case "restoranpos":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="overflow-hidden rounded-2xl border border-slate-200/80 shadow-card">
-            <iframe
-              width="100%"
-              height="600"
-              src="https://www.youtube.com/embed/J6llpaBRUQk?rel=0"
-              title="Restoran POS Otomasyonu Projesi"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-              className="aspect-video w-full"
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-4 shadow-card">
+            <Image
+              src="/proje_icon/restoran.jpg"
+              alt="Restoran POS Otomasyonu"
+              width={1200}
+              height={800}
+              className="h-auto w-full rounded-2xl"
             />
           </div>
         </article>
@@ -456,7 +452,7 @@ export function ProjectDetailContent({
         <article className="prose-blog space-y-6 text-ink-muted">
           <div className="mx-auto max-w-sm overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-4 shadow-card">
             <Image
-              src="/screenshots/calculator.png"
+              src="/proje_icon/calculator.png"
               alt="Calculator Mobile App ekran görüntüsü"
               width={386}
               height={813}

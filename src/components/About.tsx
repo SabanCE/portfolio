@@ -1,9 +1,36 @@
 "use client";
 
+import { motion, Variants } from "framer-motion";
 import { useLocale } from "@/components/providers/LocaleProvider";
 import { siteConfig } from "@/config/site";
 import { AnimateIn } from "./AnimateIn";
 import { SectionHeading } from "./SectionHeading";
+
+const skillListVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const skillItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    rotateY: 90,
+    y: 18,
+  },
+  visible: {
+    opacity: 1,
+    rotateY: 0,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      ease: "easeOut",
+    },
+  },
+};
 
 export function About() {
   const { t } = useLocale();
@@ -34,17 +61,23 @@ export function About() {
               <h3 className="mb-5 font-display text-xl font-bold text-ink dark:text-slate-100">
                 {t.about.skills}
               </h3>
-              <ul className="flex flex-wrap gap-2.5">
-                {siteConfig.skills.map((skill, i) => (
-                  <li
+              <motion.ul
+                className="flex flex-wrap gap-2.5"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={skillListVariants}
+              >
+                {siteConfig.skills.map((skill) => (
+                  <motion.li
                     key={skill}
-                    className="rounded-full border border-slate-200 bg-gradient-to-br from-white to-sky-50/50 px-4 py-2 text-sm font-medium text-ink-muted shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-200 hover:text-sky-700 hover:shadow-md dark:border-slate-700 dark:from-slate-800 dark:to-slate-900 dark:text-slate-300 dark:hover:border-sky-500 dark:hover:text-sky-400"
-                    style={{ animationDelay: `${i * 50}ms` }}
+                    variants={skillItemVariants}
+                    className="transform-gpu rounded-full border border-slate-200 bg-gradient-to-br from-white to-sky-50/50 px-4 py-2 text-sm font-medium text-ink-muted shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-200 hover:text-sky-700 hover:shadow-md dark:border-slate-700 dark:from-slate-800 dark:to-slate-900 dark:text-slate-300 dark:hover:border-sky-500 dark:hover:text-sky-400"
                   >
                     {skill}
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
           </AnimateIn>
         </div>

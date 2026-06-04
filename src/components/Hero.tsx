@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useLocale } from "@/components/providers/LocaleProvider";
 import { siteConfig } from "@/config/site";
 import Image from "next/image";
@@ -8,16 +9,45 @@ import { VisitorCounter } from "@/components/VisitorCounter";
 export function Hero() {
   const { t } = useLocale();
 
+  const heroContainer: any = {
+    hidden: { opacity: 0, y: -40, filter: "blur(24px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 1.8,
+        ease: [0.22, 1, 0.36, 1],
+        delayChildren: 0.2,
+        staggerChildren: 0.16,
+      },
+    },
+  };
+
+  const heroItem: any = {
+    hidden: { opacity: 0, y: -24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
   return (
-    <section className="relative overflow-hidden pt-28 pb-24 md:pt-36 md:pb-32">
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      variants={heroContainer}
+      className="relative overflow-hidden pt-28 pb-24 md:pt-36 md:pb-32"
+    >
       <div className="blob -left-20 top-10 h-72 w-72 bg-sky-300/40 animate-float dark:bg-sky-500/20" />
       <div className="blob -right-16 top-32 h-80 w-80 bg-violet-300/30 animate-float-delayed dark:bg-violet-500/15" />
       <div className="blob bottom-0 left-1/3 h-64 w-64 bg-sky-200/50 animate-pulse-soft dark:bg-sky-500/10" />
 
-      <div className="relative mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-[1fr_auto] md:items-center">
-        <div
-          className="animate-fade-up space-y-6 opacity-0"
-          style={{ animationFillMode: "forwards" }}
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-[1fr_auto] md:items-center">
+        <motion.div
+          variants={heroItem}
+          className="space-y-6"
         >
           <div className="flex flex-wrap items-center gap-3">
             <p className="inline-flex items-center gap-2 rounded-full border border-sky-100 bg-white/80 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-sky-700 shadow-soft backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80 dark:text-sky-400">
@@ -49,11 +79,11 @@ export function Hero() {
               {t.hero.about}
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div
-          className="relative mx-auto animate-scale-in opacity-0 md:mx-0 animate-delay-200"
-          style={{ animationFillMode: "forwards" }}
+        <motion.div
+          variants={heroItem}
+          className="relative mx-auto md:mx-0"
         >
           <div className="photo-frame h-56 w-56 md:h-72 md:w-72">
             <div className="relative h-full w-full overflow-hidden rounded-2xl">
@@ -70,8 +100,8 @@ export function Hero() {
           <div className="absolute -right-3 -top-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-violet-500 text-2xl shadow-glow animate-float">
             ✦
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
