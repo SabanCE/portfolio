@@ -2,8 +2,10 @@
 
 import { useLocale } from "@/components/providers/LocaleProvider";
 import { getProjectDisplayInfo } from "@/config/project-details";
+import { AnimateIn } from "@/components/AnimateIn";
 import Image from "next/image";
 import { useState } from "react";
+import { SnakeGameIframe } from "@/components/projects/SnakeGameIframe";
 
 type ScreenshotItem = {
   src: string;
@@ -29,9 +31,9 @@ function ScreenshotCarousel({
   return (
     <div
       style={{ maxWidth: `${maxWidth}px` }}
-      className="mx-auto w-full space-y-4 rounded-3xl border border-slate-200/80 bg-white p-3 shadow-card"
+      className="mx-auto w-full space-y-4 rounded-3xl border border-slate-200/80 bg-white/90 p-3 shadow-card dark:border-slate-700/80 dark:bg-slate-950/95"
     >
-      <div className="overflow-hidden rounded-3xl bg-slate-950/5">
+      <div className="overflow-hidden rounded-3xl bg-slate-950/5 dark:bg-slate-900/40">
         <Image
           src={item.src}
           alt={item.alt}
@@ -353,11 +355,11 @@ export function ProjectDetailContent({
     case "aiyardimcim":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="overflow-hidden rounded-2xl border border-slate-200/80 shadow-card">
+          <div className="overflow-hidden rounded-2xl border border-slate-200/70 bg-white/90 shadow-card dark:border-slate-700/70 dark:bg-slate-950/95">
             <iframe
               width="100%"
               height="600"
-              src="https://www.youtube.com/embed/vAuj451avUk?rel=0"
+              src="https://www.youtube.com/embed/vAuj451avUk?rel=0&theme=dark&color=white"
               title="AI Yardımcım Projesi"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -435,13 +437,14 @@ export function ProjectDetailContent({
     case "restoranpos":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-4 shadow-card">
-            <Image
-              src="/proje_icon/restoran.jpg"
-              alt="Restoran POS Otomasyonu"
-              width={1200}
-              height={800}
-              className="h-auto w-full rounded-2xl"
+          <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-black shadow-card">
+            <iframe
+              src="https://www.youtube.com/embed/J6llpaBRUQk?rel=0"
+              title="Restoran POS Otomasyonu Demo"
+              className="aspect-[16/10] w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
             />
           </div>
         </article>
@@ -450,9 +453,9 @@ export function ProjectDetailContent({
     case "calculator-kotlin":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="mx-auto max-w-sm overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-4 shadow-card">
+          <div className="mx-auto max-w-sm overflow-hidden rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-card dark:border-slate-700/80 dark:bg-slate-950/95">
             <Image
-              src="/proje_icon/calculator.png"
+              src="/screenshots/calculator.jpg"
               alt="Calculator Mobile App ekran görüntüsü"
               width={386}
               height={813}
@@ -469,16 +472,7 @@ export function ProjectDetailContent({
       });
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-black shadow-card">
-            <iframe
-              src="https://sabance.github.io/snake-game-web/"
-              title="Snake Game"
-              className="aspect-[16/10] w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </div>
+          <SnakeGameIframe />
           <p className="text-sm text-ink-muted dark:text-slate-400">{description}</p>
         </article>
       );
@@ -595,7 +589,7 @@ export function ProjectDetailContent({
     case "databaseoperations":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
-          <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3 shadow-card">
+          <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white/90 p-3 shadow-card dark:border-slate-700/80 dark:bg-slate-950/95">
             <Image
               src="/screenshots/gor.png"
               alt="Database Operations uygulama ekranı"
@@ -609,7 +603,18 @@ export function ProjectDetailContent({
 
     case "autonomous-kmeans-architecture":
       return (
-        <article className="prose-blog text-ink-muted dark:text-slate-400">
+        <article className="prose-blog space-y-8 text-ink-muted dark:text-slate-400">
+          <AnimateIn blur delay={100}>
+            <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-950 shadow-card">
+              <Image
+                src="/proje_icon/k-means.png"
+                alt="Autonomous K-Means Architecture Demo"
+                width={1200}
+                height={800}
+                className="h-auto w-full rounded-3xl object-cover"
+              />
+            </div>
+          </AnimateIn>
           <p>
             Akıllı K-Means Motoru: İnsan müdahalesi olmadan kümeleme parametrelerini optimize eden akıllı bir MATLAB algoritması.
           </p>

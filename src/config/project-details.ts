@@ -4,8 +4,7 @@ export const projectDetailOverrides: Record<
   { title?: string; description?: string }
 > = {
   aiyardimcim: {
-    title:
-      'ChatGPT\'den Daha "Kişisel" Bir Deneyim: Full Stack AI Yaşam Asistanı\'nı Geliştirdim! 🤖🧠',
+    title: "AI Yaşam Asistanı",
     description:
       "Kalıcı bellek, sosyal çevre hafızası, multimodal analiz ve proaktif görev çıkarma ile full stack AI yaşam asistanı.",
   },

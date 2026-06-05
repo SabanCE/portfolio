@@ -30,9 +30,9 @@ const gymScreenshots: ProjectMediaItem[] = [
 ];
 
 const zirveScreenshots: ProjectMediaItem[] = [
-  { type: "image", src: "/screenshots/egz/1777465641258.jfif", alt: "Çekiliş sayfası 1", caption: "Ana Sayfa", width: 1280, height: 608 },
-  { type: "image", src: "/screenshots/egz/1777465641349.jfif", alt: "Çekiliş sayfası 2", caption: "Form ve Katılım", width: 1280, height: 603 },
-  { type: "image", src: "/screenshots/egz/1777465641517.jfif", alt: "Çekiliş sayfası 3", caption: "Sonuç Ekranı", width: 1280, height: 608 },
+  { type: "image", src: "/egz/1777465641258.jfif", alt: "Çekiliş sayfası 1", caption: "Ana Sayfa", width: 1280, height: 608 },
+  { type: "image", src: "/egz/1777465641349.jfif", alt: "Çekiliş sayfası 2", caption: "Form ve Katılım", width: 1280, height: 603 },
+  { type: "image", src: "/egz/1777465641517.jfif", alt: "Çekiliş sayfası 3", caption: "Sonuç Ekranı", width: 1280, height: 608 },
 ];
 
 const kampusScreenshots: ProjectMediaItem[] = [
@@ -62,18 +62,28 @@ const projectMediaMap: Record<string, ProjectMediaItem[]> = {
   ],
   restoranpos: [
     {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/J6llpaBRUQk?rel=0",
+      alt: "Restoran POS Otomasyonu Demo",
+      caption: "Demo Video",
+    },
+    {
       type: "image",
-      src: "/proje_icon/restoran.jpg",
+      src: iconPath("restoran.jpg"),
       alt: "Restoran POS Otomasyonu",
-      caption: "Demo Görseli",
-      width: 900,
-      height: 600,
+      caption: "Proje Önizleme Görseli",
     },
   ],
   "calculator-kotlin": [
     {
       type: "image",
-      src: "/proje_icon/calculator.png",
+      src: iconPath("calculator.png"),
+      alt: "Calculator Mobile App Ikonu",
+      caption: "Demo Görseli",
+    },
+    {
+      type: "image",
+      src: "/screenshots/calculator.jpg",
       alt: "Calculator Mobile App",
       caption: "Hesap Makinesi",
       width: 386,
@@ -111,6 +121,14 @@ const projectMediaMap: Record<string, ProjectMediaItem[]> = {
       caption: "Proje Önizleme Görseli",
     },
     ...gymScreenshots,
+  ],
+  "autonomous-kmeans-architecture": [
+    {
+      type: "image",
+      src: iconPath("k-means.png"),
+      alt: "Autonomous K-Means Architecture Proje Ikonu",
+      caption: "Proje Önizleme Görseli",
+    },
   ],
   zirve2: [
     {

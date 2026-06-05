@@ -36,7 +36,8 @@ export function Hero() {
   return (
     <motion.section
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
       variants={heroContainer}
       className="relative overflow-hidden pt-28 pb-24 md:pt-36 md:pb-32"
     >
