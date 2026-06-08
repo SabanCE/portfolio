@@ -190,21 +190,21 @@ const gymScreenshots = [
 
 const zirveScreenshots = [
   {
-    src: "/screenshots/egz/1777465641258.jfif",
+    src: "/screenshots/egz/1777465641258.jpg",
     alt: "Çekiliş sayfası ekran görüntüsü 1",
     caption: "Ana Sayfa ve Kullanıcı Etkileşimi",
     width: 1280,
     height: 608,
   },
   {
-    src: "/screenshots/egz/1777465641349.jfif",
+    src: "/screenshots/egz/1777465641349.jpg",
     alt: "Çekiliş sayfası ekran görüntüsü 2",
     caption: "Form ve Canlı Katılım",
     width: 1280,
     height: 603,
   },
   {
-    src: "/screenshots/egz/1777465641517.jfif",
+    src: "/screenshots/egz/1777465641517.jpg",
     alt: "Çekiliş sayfası ekran görüntüsü 3",
     caption: "Sonuç ve Kazanan Bildirimi",
     width: 1280,

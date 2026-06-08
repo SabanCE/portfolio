@@ -30,9 +30,9 @@ const gymScreenshots: ProjectMediaItem[] = [
 ];
 
 const zirveScreenshots: ProjectMediaItem[] = [
-  { type: "image", src: "/egz/1777465641258.jfif", alt: "Çekiliş sayfası 1", caption: "Ana Sayfa", width: 1280, height: 608 },
-  { type: "image", src: "/egz/1777465641349.jfif", alt: "Çekiliş sayfası 2", caption: "Form ve Katılım", width: 1280, height: 603 },
-  { type: "image", src: "/egz/1777465641517.jfif", alt: "Çekiliş sayfası 3", caption: "Sonuç Ekranı", width: 1280, height: 608 },
+  { type: "image", src: "/egz/1777465641258.jpg", alt: "Çekiliş sayfası 1", caption: "Ana Sayfa", width: 1280, height: 608 },
+  { type: "image", src: "/egz/1777465641349.jpg", alt: "Çekiliş sayfası 2", caption: "Form ve Katılım", width: 1280, height: 603 },
+  { type: "image", src: "/egz/1777465641517.jpg", alt: "Çekiliş sayfası 3", caption: "Sonuç Ekranı", width: 1280, height: 608 },
 ];
 
 const kampusScreenshots: ProjectMediaItem[] = [

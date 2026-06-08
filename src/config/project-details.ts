@@ -31,7 +31,7 @@ export const projectDetailOverrides: Record<
       "Kotlin (MVVM + Jetpack Compose) ile geliştirilmiş istemci tarafı fitness takip uygulaması. Çevrimdışı öncelikli veri kalıcılığı için Room DB kullanarak egzersiz takibi, aşamalı yüklenme, makro hesaplama ve ilerleme izleme özelliklerini içerir.",
   },
   zirve2: {
-    title: "Gerçek kullanıcılarla buluşan ilk projem Çekiliş Sayfası",
+    title: "Çekiliş Sayfası",
     description:
       "Girişimcilik zirvesi için tam kapsamlı hediye dağıtım web uygulaması. HTML, CSS, JS, Node.js ile geliştirildi; Firebase ve Google Sheets API'leri entegre edildi. Canlı bir alan adı ile Railway ve Cloudflare üzerinden dağıtıldı. Gerçek zamanlı veri işleme, ölçeklenebilirlik ve üretim ortamına dağıtıma odaklanıldı.",
   },

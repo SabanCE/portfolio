@@ -85,9 +85,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   {repo.language}
                 </span>
               )}
-              <span className="text-sm text-ink-faint">
-                ★ {repo.stargazers_count}
-              </span>
             </div>
             <h1 className="mt-4 font-display text-3xl font-bold text-ink dark:text-slate-100 md:text-4xl">
               {title}

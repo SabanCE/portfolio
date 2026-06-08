@@ -157,12 +157,9 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
           {info.description}
         </p>
 
-        <div className="flex items-center gap-1 border-t border-slate-100 pt-4 text-sm text-ink-faint dark:border-slate-700 dark:text-slate-500">
-          <span className="text-amber-400">★</span>
-          {repo.stargazers_count}
-        </div>
-
         <div className="mt-4 flex flex-wrap gap-2">
+          
+
           <Link
             href={projectDetailPath(repo.name)}
             className="btn-primary flex-1 !px-4 !py-2 text-center text-xs sm:flex-none"
