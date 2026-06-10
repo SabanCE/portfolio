@@ -3,7 +3,9 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { getBlogPost, getSortedBlogPosts } from "@/config/blog";
 import { siteConfig } from "@/config/site";
-import { formatDateTR } from "@/lib/format-date";
+import { formatDate } from "@/lib/format-date";
+import { getServerLocale } from "@/lib/get-server-locale";
+import { getTranslations } from "@/i18n/translations";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -23,12 +25,16 @@ export async function generateMetadata({
   const post = getBlogPost(slug);
 
   if (!post) {
-    return { title: "Yazı bulunamadı" };
+    return { title: "Blog post not found" };
   }
 
+  const locale = await getServerLocale();
+  const title = locale === "en" ? post.titleEn ?? post.title : post.title;
+  const excerpt = locale === "en" ? post.excerptEn ?? post.excerpt : post.excerpt;
+
   return {
-    title: `${post.title} | ${siteConfig.name}`,
-    description: post.excerpt,
+    title: `${title} | ${siteConfig.name}`,
+    description: excerpt,
   };
 }
 
@@ -40,6 +46,11 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  const locale = await getServerLocale();
+  const t = getTranslations(locale);
+  const title = locale === "en" ? post.titleEn ?? post.title : post.title;
+  const excerpt = locale === "en" ? post.excerptEn ?? post.excerpt : post.excerpt;
+
   return (
     <>
       <Header />
@@ -49,7 +60,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             href="/blog"
             className="inline-flex items-center gap-2 text-sm font-medium text-ink-muted transition-colors hover:text-sky-600"
           >
-            ← Bloga dön
+            {t.blog.backToBlog}
           </Link>
 
           <header className="mt-8 animate-fade-up">
@@ -57,10 +68,10 @@ export default async function BlogPostPage({ params }: PageProps) {
               dateTime={post.date}
               className="text-sm font-medium text-sky-600"
             >
-              {formatDateTR(post.date)}
+              {formatDate(post.date, locale)}
             </time>
             <h1 className="mt-4 font-display text-3xl font-bold text-ink md:text-4xl">
-              {post.title}
+              {title}
             </h1>
             {post.tags && post.tags.length > 0 && (
               <ul className="mt-4 flex flex-wrap gap-2">
@@ -75,12 +86,12 @@ export default async function BlogPostPage({ params }: PageProps) {
               </ul>
             )}
             <p className="mt-6 text-lg leading-relaxed text-ink-muted">
-              {post.excerpt}
+              {excerpt}
             </p>
           </header>
 
           <div className="mt-12 animate-fade-up animate-delay-200">
-            <BlogPostContent slug={slug} />
+            <BlogPostContent slug={slug} locale={locale} />
           </div>
         </article>
       </main>

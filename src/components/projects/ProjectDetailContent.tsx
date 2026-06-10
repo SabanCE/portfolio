@@ -26,6 +26,7 @@ function ScreenshotCarousel({
   imageWidth?: number;
   imageHeight?: number;
 }) {
+  const { t } = useLocale();
   const [index, setIndex] = useState(0);
   const item = items[index];
   return (
@@ -52,14 +53,14 @@ function ScreenshotCarousel({
             onClick={() => setIndex((prev) => (prev - 1 + items.length) % items.length)}
             className="btn-secondary !py-2 !px-4"
           >
-            Geri
+            {t.projectPage.previous}
           </button>
           <button
             type="button"
             onClick={() => setIndex((prev) => (prev + 1) % items.length)}
             className="btn-secondary !py-2 !px-4"
           >
-            İleri
+            {t.projectPage.next}
           </button>
           <span className="text-xs text-slate-500 dark:text-slate-400">
             {index + 1} / {items.length}
@@ -99,90 +100,90 @@ function ProjectDemoLink({
 const chatappScreenshots = [
   {
     src: "/screenshots/chatapp/login.jpeg",
-    alt: "Giriş Sayfası",
-    caption: "Giriş Sayfası",
+    alt: "Login screen",
+    caption: "Login screen",
   },
   {
     src: "/screenshots/chatapp/home.jpeg",
-    alt: "Ana Sayfa",
-    caption: "Ana Sayfa",
+    alt: "Home screen",
+    caption: "Home screen",
   },
   {
     src: "/screenshots/chatapp/onetoone.jpeg",
-    alt: "Birebir Mesajlaşma",
-    caption: "Birebir Mesajlaşma",
+    alt: "One-on-one chat",
+    caption: "One-on-one chat",
   },
   {
     src: "/screenshots/chatapp/groupchat.jpeg",
-    alt: "Grup Mesajlaşma",
-    caption: "Grup Mesajlaşma",
+    alt: "Group chat",
+    caption: "Group chat",
   },
   {
     src: "/screenshots/chatapp/newgroup.jpeg",
-    alt: "Yeni Grup Oluşturma",
-    caption: "Yeni Grup Oluşturma",
+    alt: "Create new group",
+    caption: "Create new group",
   },
   {
     src: "/screenshots/chatapp/settings.jpeg",
-    alt: "Ayarlar",
-    caption: "Ayarlar",
+    alt: "Settings",
+    caption: "Settings",
   },
 ] as const;
 
 const gymScreenshots = [
   {
     src: "/screenshots/gym/h1.png",
-    alt: "GymTracking ana sayfa",
-    caption: "Ana Sayfa",
+    alt: "GymTracking home screen",
+    caption: "Home screen",
     width: 382,
     height: 829,
   },
   {
     src: "/screenshots/gym/h2.png",
-    alt: "GymTracking ana sayfa görünümü",
-    caption: "Ana Sayfa Görünümü",
+    alt: "GymTracking home screen view",
+    caption: "Home screen view",
     width: 403,
     height: 831,
   },
   {
     src: "/screenshots/gym/w1.png",
-    alt: "GymTracking egzersiz takibi",
-    caption: "Egzersiz Takibi",
+    alt: "GymTracking workout tracking",
+    caption: "Workout tracking",
     width: 417,
     height: 854,
   },
   {
     src: "/screenshots/gym/w2.png",
-    alt: "GymTracking antrenman ekranı",
-    caption: "Antrenman Detayları",
+    alt: "GymTracking training screen",
+    caption: "Training details",
     width: 398,
     height: 840,
   },
   {
     src: "/screenshots/gym/m1.png",
-    alt: "GymTracking makro hesaplama",
-    caption: "Makro Hesaplama",
+    alt: "GymTracking macro calculator",
+    caption: "Macro calculator",
     width: 401,
     height: 841,
   },
   {
     src: "/screenshots/gym/p1.png",
-    alt: "GymTracking ilerleme izleme",
-    caption: "İlerleme Takibi",
+    alt: "GymTracking progress tracking",
+    caption: "Progress tracking",
     width: 398,
     height: 851,
   },
   {
     src: "/screenshots/gym/g1.png",
-    alt: "GymTracking genel görünüm",
-    caption: "Genel Görünüm",
+    alt: "GymTracking overview",
+    caption: "Overview",
     width: 412,
     height: 835,
   },
   {
     src: "/screenshots/gym/np1.png",
-    alt: "GymTracking yeni program",
-    caption: "Yeni Program",
+    alt: "GymTracking new program",
+    caption: "New program",
     width: 422,
     height: 859,
   },
@@ -191,22 +192,22 @@ const gymScreenshots = [
 const zirveScreenshots = [
   {
     src: "/screenshots/egz/1777465641258.jpg",
-    alt: "Çekiliş sayfası ekran görüntüsü 1",
-    caption: "Ana Sayfa ve Kullanıcı Etkileşimi",
+    alt: "Giveaway page screenshot 1",
+    caption: "Landing page and participant flow",
     width: 1280,
     height: 608,
   },
   {
     src: "/screenshots/egz/1777465641349.jpg",
-    alt: "Çekiliş sayfası ekran görüntüsü 2",
-    caption: "Form ve Canlı Katılım",
+    alt: "Giveaway page screenshot 2",
+    caption: "Form and live entry",
     width: 1280,
     height: 603,
   },
   {
     src: "/screenshots/egz/1777465641517.jpg",
-    alt: "Çekiliş sayfası ekran görüntüsü 3",
-    caption: "Sonuç ve Kazanan Bildirimi",
+    alt: "Giveaway page screenshot 3",
+    caption: "Result screen and winner announcement",
     width: 1280,
     height: 608,
   },
@@ -215,117 +216,117 @@ const zirveScreenshots = [
 const kampusScreenshots = [
   {
     src: "/screenshots/kampus/giris.jpeg",
-    alt: "Kampüs Güvende giriş ekranı",
-    caption: "Giriş Ekranı",
+    alt: "Campus Safe login screen",
+    caption: "Login screen",
   },
   {
     src: "/screenshots/kampus/anaekran.jpeg",
-    alt: "Kampüs Güvende ana ekran",
-    caption: "Ana Sayfa",
+    alt: "Campus Safe dashboard",
+    caption: "Dashboard",
   },
   {
     src: "/screenshots/kampus/acildurum.jpeg",
-    alt: "Kampüs Güvende acil durum bildirimi",
-    caption: "Acil Durum Bildirimi",
+    alt: "Campus Safe emergency report",
+    caption: "Emergency incident",
   },
   {
     src: "/screenshots/kampus/harita.jpeg",
-    alt: "Kampüs Güvende harita görünümü",
-    caption: "Harita Görünümü",
+    alt: "Campus Safe map view",
+    caption: "Map view",
   },
   {
     src: "/screenshots/kampus/bildirimdetay.jpeg",
-    alt: "Kampüs Güvende bildirim detayı",
-    caption: "Bildirim Detayı",
+    alt: "Campus Safe notification detail",
+    caption: "Notification detail",
   },
   {
     src: "/screenshots/kampus/adminpanel.jpeg",
-    alt: "Kampüs Güvende admin paneli",
-    caption: "Admin Paneli",
+    alt: "Campus Safe admin panel",
+    caption: "Admin panel",
   },
   {
     src: "/screenshots/kampus/ayarlar.jpeg",
-    alt: "Kampüs Güvende ayarlar",
-    caption: "Ayarlar",
+    alt: "Campus Safe settings",
+    caption: "Settings",
   },
 ] as const;
 
 const depremzedeScreenshots = [
   {
     src: "/deprem/depremzede/1-anasayfa.jpeg",
-    alt: "Depremzede paneli ana sayfa ekran görüntüsü",
-    caption: "Ana Sayfa ve acil haberleşme arayüzü",
+    alt: "Earthquake victim panel home screen",
+    caption: "Home screen and urgent communication",
   },
   {
     src: "/deprem/depremzede/2-offline toplanma alanı bulma.jpeg",
-    alt: "Depremzede paneli offline toplanma alanı bulma ekran görüntüsü",
-    caption: "Offline toplanma alanı bulma özelliği",
+    alt: "Offline shelter finder",
+    caption: "Offline shelter finder feature",
   },
   {
     src: "/deprem/depremzede/3-ai danışman.jpeg",
-    alt: "Depremzede paneli yapay zekâ destekli danışman ekran görüntüsü",
-    caption: "Yapay zekâ destekli öneri ve rehberlik",
+    alt: "AI assistant view",
+    caption: "AI-powered guidance and recommendations",
   },
   {
     src: "/deprem/depremzede/4-haberleşme.jpeg",
-    alt: "Depremzede paneli haberleşme ekran görüntüsü",
-    caption: "Mesajlaşma ve iletişim ekranı",
+    alt: "Messaging screen",
+    caption: "Messaging and communication interface",
   },
   {
     src: "/deprem/depremzede/5-haberleşme.jpeg",
-    alt: "Depremzede paneli ikinci haberleşme ekran görüntüsü",
-    caption: "Bluetooth/Wi-Fi Mesh üzerinden iletişim",
+    alt: "Mesh network messaging",
+    caption: "Bluetooth/Wi-Fi mesh messaging",
   },
 ] as const;
 
 const koordineScreenshots = [
   {
     src: "/deprem/koordine/1-anasayfa.jpeg",
-    alt: "Koordine paneli ana sayfa ekran görüntüsü",
-    caption: "Ana Koordine kontrol paneli",
+    alt: "Coordination dashboard home screen",
+    caption: "Coordination dashboard",
   },
   {
     src: "/deprem/koordine/2-map.jpeg",
-    alt: "Koordine paneli harita ekran görüntüsü",
-    caption: "Kurtarma ekiplerinin harita görünümü",
+    alt: "Rescue teams map view",
+    caption: "Rescue team map view",
   },
   {
     src: "/deprem/koordine/3-lojistik sevk.jpeg",
-    alt: "Koordine paneli lojistik sevk ekran görüntüsü",
-    caption: "Lojistik sevk ve kaynak dağıtımı",
+    alt: "Logistics dispatch screen",
+    caption: "Logistics dispatch",
   },
   {
     src: "/deprem/koordine/4-kurtarma ekibi sevk.jpeg",
-    alt: "Koordine paneli kurtarma ekibi sevk ekran görüntüsü",
-    caption: "Kurtarma ekibi sevk yönetimi",
+    alt: "Rescue team allocation",
+    caption: "Rescue team coordination",
   },
   {
     src: "/deprem/koordine/5-sağlık sevk.jpeg",
-    alt: "Koordine paneli sağlık sevk ekran görüntüsü",
-    caption: "Acil sağlık sevk koordinasyonu",
+    alt: "Medical dispatch",
+    caption: "Emergency medical coordination",
   },
 ] as const;
 
 const personelScreenshots = [
   {
     src: "/deprem/personel/1-anasayfa.jpeg",
-    alt: "Personel paneli ana sayfa ekran görüntüsü",
-    caption: "Personel yönetimi ana sayfası",
+    alt: "Personnel dashboard home screen",
+    caption: "Personnel management overview",
   },
   {
     src: "/deprem/personel/2-gecmis kayitlar.jpeg",
-    alt: "Personel paneli geçmiş kayıtlar ekran görüntüsü",
-    caption: "Geçmiş kayıtlar ve durum geçmişi",
+    alt: "Historical records screen",
+    caption: "Past records and status history",
   },
   {
     src: "/deprem/personel/3-map.jpeg",
-    alt: "Personel paneli harita ekran görüntüsü",
-    caption: "Personel hareketlerinin harita takibi",
+    alt: "Map-based personnel tracking",
+    caption: "Personnel movement map",
   },
   {
     src: "/deprem/personel/4-koordinesyon.jpeg",
-    alt: "Personel paneli koordinasyon ekran görüntüsü",
-    caption: "Takım koordinasyon ve görev dağılımı",
+    alt: "Coordination screen",
+    caption: "Team coordination and task assignment",
   },
 ] as const;
 
@@ -349,7 +350,7 @@ export function ProjectDetailContent({
   repoName,
   repoUrl,
 }: ProjectDetailContentProps) {
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
 
   switch (slug) {
     case "aiyardimcim":
@@ -369,14 +370,21 @@ export function ProjectDetailContent({
             />
           </div>
 
-          <h2>Öne Çıkan Teknik Özellikler</h2>
+          <h2>
+            {locale === "en"
+              ? "Key technical features"
+              : "Öne Çıkan Teknik Özellikler"}
+          </h2>
           <ul>
             <li>
-              <strong>🧠 Kalıcı Bellek &amp; Profil Yönetimi:</strong> Uygulama
-              mesleğinizi, hobilerinizi ve tercihlerinizi asla unutmuyor.
-              Backend&apos;de kurguladığım akıllı filtreleme algoritması, sohbet
-              içinden &quot;kalıcı bilgileri&quot; ayıklayıp profilinize
-              işliyor.
+              <strong>
+                {locale === "en"
+                  ? "🧠 Persistent Memory & Profile Management:"
+                  : "🧠 Kalıcı Bellek & Profil Yönetimi:"}
+              </strong>{" "}
+              {locale === "en"
+                ? "The app never forgets your profession, hobbies, and preferences. A custom backend filter extracts persistent details from the conversation and stores them in your profile."
+                : "Uygulama mesleğinizi, hobilerinizi ve tercihlerinizi asla unutmuyor. Backend'de kurguladığım akıllı filtreleme algoritması, sohbet içinden 'kalıcı bilgileri' ayıklayıp profilinize işliyor."}
             </li>
             <li>
               <strong>👥 Sosyal Çevre Hafızası (Personal CRM):</strong>{" "}
@@ -404,25 +412,27 @@ export function ProjectDetailContent({
           </ul>
 
           <h2>Kullandığım Teknolojiler</h2>
-          <ul>
-            <li>
-              <strong>Android:</strong> Kotlin, Jetpack Compose, Material 3,
-              MVVM, StateFlow, Room DB, Coil 3.
-            </li>
-            <li>
-              <strong>Backend:</strong> Node.js, Express.js.
-            </li>
-            <li>
-              <strong>AI:</strong> Google Gemini 2.0 &amp; 2.5 Flash/Pro.
-            </li>
-            <li>
-              <strong>Database:</strong> Firebase Firestore &amp; Firebase Admin
-              SDK.
-            </li>
-            <li>
-              <strong>Networking:</strong> Retrofit &amp; OkHttp.
-            </li>
-          </ul>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Kotlin",
+              
+            
+              "Coil 3",
+              "Node.js",
+              "Google Gemini API",
+              
+              "Firebase Firestore",
+              "Retrofit",
+              "OkHttp",
+            ].map((tech) => (
+              <div
+                key={tech}
+                className="rounded-3xl border border-slate-200/80 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700/80 dark:bg-slate-950/95 dark:text-slate-100 dark:hover:border-sky-500 dark:hover:bg-slate-900"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
 
           <p>
             Bu süreçte bir mobil uygulamanın en uç noktadan (UI) en derin
@@ -541,24 +551,25 @@ export function ProjectDetailContent({
           </p>
 
           <h2>Kullanılan Teknolojiler</h2>
-          <ul>
-            <li>Kotlin</li>
-            <li>MVVM</li>
-            <li>Coroutines</li>
-            <li>Flow</li>
-            <li>Google Nearby Connections API</li>
-            <li>Mesh Networking</li>
-            <li>Room Database</li>
-            <li>Firebase (Firestore &amp; Authentication)</li>
-            <li>Google Gemini AI</li>
-            <li>Google Maps SDK</li>
-            <li>MapLibre</li>
-            <li>Android Sensor Framework</li>
-            <li>MPAndroidChart</li>
-            <li>STA/LTA Algoritması</li>
-            <li>WorkManager</li>
-            <li>Material Design Components</li>
-          </ul>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Kotlin",
+              "Google Nearby API",
+              "Mesh Networking",
+              "Firebase",
+              "Gemini AI API",
+              "Google Maps API",
+              "MapLibre",
+              "STA/LTA Algoritması",
+            ].map((tech) => (
+              <div
+                key={tech}
+                className="rounded-3xl border border-slate-200/80 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700/80 dark:bg-slate-950/95 dark:text-slate-100 dark:hover:border-sky-500 dark:hover:bg-slate-900"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
 
           <h2>Ekran Görüntüleri</h2>
           <div className="space-y-12">

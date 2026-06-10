@@ -8,7 +8,7 @@ type ProjectDetailBodyProps = {
 };
 
 export function ProjectDetailBody({ slug, repoName }: ProjectDetailBodyProps) {
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
 
   switch (slug) {
     case "aiyardimcim":
@@ -16,34 +16,55 @@ export function ProjectDetailBody({ slug, repoName }: ProjectDetailBodyProps) {
         <article className="max-w-3xl space-y-8 text-white/60">
           <div>
             <h2 className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
-              Öne Çıkan Özellikler
+              {t.projectPage.features}
             </h2>
             <ul className="mt-4 space-y-3 text-sm leading-relaxed">
               <li>
-                <strong className="text-white/80">Kalıcı Bellek:</strong> Meslek,
-                hobiler ve tercihler profilinize işlenir.
+                <strong className="text-white/80">
+                  {locale === "en" ? "Persistent Memory:" : "Kalıcı Bellek:"}
+                </strong>{" "}
+                {locale === "en"
+                  ? "Stores your profession, hobbies, and preferences to keep conversations coherent over time."
+                  : "Meslek, hobiler ve tercihler profilinize işlenir."}
               </li>
               <li>
-                <strong className="text-white/80">Sosyal Çevre Hafızası:</strong>{" "}
-                Bahsettiğiniz kişiler ilişkileriyle kaydedilir.
+                <strong className="text-white/80">
+                  {locale === "en" ? "Social Context Retention:" : "Sosyal Çevre Hafızası:"}
+                </strong>{" "}
+                {locale === "en"
+                  ? "Remembers people and relationships mentioned in chat so follow-up questions stay meaningful."
+                  : "Bahsettiğiniz kişiler ilişkileriyle kaydedilir."}
               </li>
               <li>
-                <strong className="text-white/80">Multimodal Analiz:</strong>{" "}
-                Fotoğraf, PDF ve Word dökümanları analiz edilir.
+                <strong className="text-white/80">
+                  {locale === "en" ? "Multimodal Analysis:" : "Multimodal Analiz:"}
+                </strong>{" "}
+                {locale === "en"
+                  ? "Processes images, PDFs, and Word documents for richer AI responses."
+                  : "Fotoğraf, PDF ve Word dökümanları analiz edilir."}
               </li>
               <li>
-                <strong className="text-white/80">Duygusal Yolculuk:</strong>{" "}
-                Canvas API ile ruh hali grafiği.
+                <strong className="text-white/80">
+                  {locale === "en" ? "Emotional Journey:" : "Duygusal Yolculuk:"}
+                </strong>{" "}
+                {locale === "en"
+                  ? "Implements a custom canvas-based mood tracker for a more engaging UI."
+                  : "Canvas API ile ruh hali grafiği."}
               </li>
               <li>
-                <strong className="text-white/80">Proaktif Görev Çıkarma:</strong>{" "}
-                Sohbetten görevler otomatik eklenir.
+                <strong className="text-white/80">
+                  {locale === "en" ? "Proactive Task Extraction:" : "Proaktif Görev Çıkarma:"}
+                </strong>{" "}
+                {locale === "en"
+                  ? "Automatically extracts action items from conversations and adds them to a task list."
+                  : "Sohbetten görevler otomatik eklenir."}
               </li>
             </ul>
           </div>
           <p className="text-sm leading-relaxed">
-            Kotlin, Jetpack Compose, Node.js, Gemini AI ve Firebase ile geliştirilmiş
-            full stack AI yaşam asistanı.
+            {locale === "en"
+              ? "A full stack AI life assistant built with Kotlin, Jetpack Compose, Node.js, Gemini AI, and Firebase."
+              : "Kotlin, Jetpack Compose, Node.js, Gemini AI ve Firebase ile geliştirilmiş full stack AI yaşam asistanı."}
           </p>
         </article>
       );
@@ -52,9 +73,13 @@ export function ProjectDetailBody({ slug, repoName }: ProjectDetailBodyProps) {
       return (
         <article className="max-w-3xl text-sm leading-relaxed text-white/60">
           <h2 className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
-            Kullanılan Teknolojiler
+            {t.projectPage.technologies}
           </h2>
-          <p className="mt-4">Firebase · Kotlin · Google Maps SDK</p>
+          <p className="mt-4">
+            {locale === "en"
+              ? "Firebase · Kotlin · Google Maps SDK"
+              : "Firebase · Kotlin · Google Maps SDK"}
+          </p>
         </article>
       );
 
@@ -62,8 +87,9 @@ export function ProjectDetailBody({ slug, repoName }: ProjectDetailBodyProps) {
       return (
         <article className="max-w-3xl text-sm leading-relaxed text-white/60">
           <p>
-            İnsan müdahalesi olmadan kümeleme parametrelerini optimize eden akıllı
-            bir MATLAB algoritması.
+            {locale === "en"
+              ? "An intelligent MATLAB algorithm that optimizes clustering parameters without human intervention."
+              : "İnsan müdahalesi olmadan kümeleme parametrelerini optimize eden akıllı bir MATLAB algoritması."}
           </p>
         </article>
       );

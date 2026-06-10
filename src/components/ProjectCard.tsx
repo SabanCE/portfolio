@@ -179,11 +179,11 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
 
         <div className="mt-4 rounded-2xl border border-slate-100 bg-slate-50/90 p-3 text-xs text-slate-700 opacity-0 transition-all duration-300 group-hover:opacity-100 dark:border-slate-700 dark:bg-slate-950/80 dark:text-slate-200">
           <div className="mb-2 font-semibold text-slate-900 dark:text-slate-100">
-            Canlı Demo & Teknoloji
+            {t.projects.liveDemoLabel} &amp; {t.projects.technologyLabel}
           </div>
           <div className="flex flex-wrap gap-2">
             <span className="rounded-full bg-slate-100 px-2 py-1 dark:bg-slate-800">
-              {repo.language ?? "Çoklu"}
+              {repo.language ?? t.projects.multipleLanguages}
             </span>
             {repo.homepage ? (
               <a
@@ -192,11 +192,11 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 className="rounded-full bg-sky-100 px-2 py-1 text-sky-700 transition hover:bg-sky-200 dark:bg-sky-900/50 dark:text-sky-200"
               >
-                Canlı Demo
+                {t.projects.liveDemoLabel}
               </a>
             ) : (
               <span className="rounded-full bg-slate-200 px-2 py-1 dark:bg-slate-800">
-                GitHub Kaynağı
+                {t.projects.githubSourceLabel}
               </span>
             )}
           </div>
@@ -244,7 +244,7 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
               <div className="flex flex-col justify-between gap-6">
                 <div>
                   <p className="text-xs uppercase tracking-[0.35em] text-sky-500/80">
-                    Proje Önizlemesi
+                    {t.projects.previewLabel}
                   </p>
                   <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
                     {info.title}
@@ -254,11 +254,11 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
 
                 <div className="space-y-4">
                   <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-4">
-                  <div className="mb-3 text-sm font-semibold text-slate-900">Kullanılan Teknolojiler</div>
+                  <div className="mb-3 text-sm font-semibold text-slate-900">{t.projects.technologyLabel}</div>
                   <div className="space-y-3 text-sm text-slate-700">
                     <div className="flex items-center justify-between gap-3">
-                      <span className="text-slate-500">Teknoloji</span>
-                      <span className="font-semibold text-slate-900">{repo.language ?? "Çoklu"}</span>
+                      <span className="text-slate-500">{t.projects.technologyLabel}</span>
+                      <span className="font-semibold text-slate-900">{repo.language ?? t.projects.multipleLanguages}</span>
                       </div>
                     </div>
                   </div>
@@ -268,7 +268,7 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
                       href={projectDetailPath(repo.name)}
                       className="btn-primary !px-4 !py-3 text-sm"
                     >
-                      Detay Sayfası
+                      {t.projects.details}
                     </Link>
                     <a
                       href={repo.homepage ?? repo.html_url}
@@ -276,7 +276,7 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
                       rel="noopener noreferrer"
                       className="btn-secondary !px-4 !py-3 text-sm"
                     >
-                      {repo.homepage ? "Canlı Demo" : "GitHub Kaynağı"}
+                      {repo.homepage ? t.projects.liveDemoLabel : t.projects.githubSourceLabel}
                     </a>
                   </div>
                 </div>

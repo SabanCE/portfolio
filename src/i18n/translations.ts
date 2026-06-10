@@ -21,6 +21,7 @@ export type TranslationKey = {
     title: string;
     subtitle: string;
     skills: string;
+    skillsList: readonly string[];
     story: readonly string[];
   };
   projects: {
@@ -32,11 +33,27 @@ export type TranslationKey = {
     noDescription: string;
     details: string;
     openRepo: string;
+    featuredTitle: string;
+    featuredDescription: string;
+    sideTitle: string;
+    sideDescription: string;
+    multipleLanguages: string;
+    liveDemoLabel: string;
+    githubSourceLabel: string;
+    previewLabel: string;
+    technologyLabel: string;
   };
   blog: {
     title: string;
     subtitle: string;
     allPosts: string;
+    returnHome: string;
+    noPostsTitle: string;
+    noPostsHint: string;
+    readMore: string;
+    backToBlog: string;
+    postNotFound: string;
+    postNotFoundHint: string;
   };
   gallery: {
     title: string;
@@ -61,6 +78,21 @@ export type TranslationKey = {
     noDetailHint: string;
     openGithubDetail: string;
     videoUnsupported: string;
+    previous: string;
+    next: string;
+    features: string;
+    technologies: string;
+    screenshots: string;
+    demoVideo: string;
+    previewImage: string;
+    liveDemo: string;
+  };
+  pages: {
+    snakeGame: {
+      title: string;
+      description: string;
+      back: string;
+    };
   };
   theme: {
     light: string;
@@ -96,10 +128,25 @@ const tr: TranslationKey = {
     title: "Hakkımda",
     subtitle: "Kendimi, yolculuğumu ve hedeflerimi tanıyın.",
     skills: "Yetkinlikler",
+    skillsList: [
+      "AI",
+      "Kotlin",
+      "Flutter",
+      "Firebase",
+      "Node.js",
+      "Python",
+      "HTML, CSS, JavaScript",
+      "Git",
+      "Çeşitli API'ler (Google Maps, OpenAI, vb.)",
+      "C / C++ / C#",
+      "Vercel, Railway",
+      "Veri Yapıları, Algoritmalar",
+    ],
     story: [
       "Merhaba, ben Şaban Akçehre. 23 yaşındayım ve Antalya doğumluyum. Teknolojiye ve yazılıma olan ilgim lise yıllarında, sınıf öğretmenimin bana hediye ettiği Steve Jobs kitabıyla başladı. O günden beri üretmek, kendimi geliştirmek ve başladığım bir hedefi tamamlamak benim için büyük bir motivasyon kaynağı oldu.",
-      "Şu anda Atatürk Üniversitesi Bilgisayar Mühendisliği bölümünde öğrenim görüyorum ve yaklaşık 1 ay içinde mezun oluyorum. Algoritmalar, web teknolojileri ve yazılım geliştirme alanlarında kendimi geliştirmeye devam ediyorum. Yeni teknolojiler öğrenmeyi, proje üretmeyi ve ekip içinde sosyal iletişim kurmayı seviyorum.",
-      "Şu anda staj ve yeni kariyer fırsatlarına açığım. Hayalim; dünyayı gezebilmek, refah içinde yaşayabilmek, gerçekten keyif aldığım ve üretirken mutlu olduğum bir iş yapmak ve iyi bir aile kurmak. Kendimi sürekli geliştirmemin en büyük sebeplerinden biri de, gelecekte kurmak istediğim hayatın temellerini bugünden oluşturmak.",
+      "Şu anda Atatürk Üniversitesi Bilgisayar Mühendisliği bölümünde öğrenim görüyorum ve yaklaşık 1 ay içinde mezun oluyorum. Algoritmalar, modern web teknolojileri ve yazılım geliştirme alanlarında çalışıyor; proje üretmeyi, yeni teknolojiler keşfetmeyi ve ekip içinde iletişim kurmayı seviyorum.",
+      "Teknolojiye ve yazılıma olan ilgim lise yıllarında, sınıf öğretmenimin bana hediye ettiği Steve Jobs kitabıyla başladı. O günden beri üretmek, yeni şeyler öğrenmek ve başladığım bir hedefi tamamlamak benim için büyük bir motivasyon kaynağı oldu.",
+      "Hayalim; dünyayı gezebilmek, refah içinde yaşayabilmek, gerçekten keyif aldığım ve üretirken mutlu olduğum bir iş yapmak ve iyi bir aile kurmak. Kendimi sürekli geliştirmemin en büyük sebeplerinden biri de, gelecekte kurmak istediğim hayatın temellerini bugünden oluşturmak.",
     ],
   },
   projects: {
@@ -112,11 +159,29 @@ const tr: TranslationKey = {
     noDescription: "Açıklama eklenmemiş.",
     details: "Detaylı bilgi",
     openRepo: "Repoyu aç →",
+    featuredTitle: "Öne Çıkan Projeler",
+    featuredDescription:
+      "Gerçek kullanıcı problemlerini çözmek için geliştirdiğim ana projeler.",
+    sideTitle: "Yan Projeler",
+    sideDescription:
+      "Öğrenme, deneysel geliştirme ve küçük ölçekli çalışmalar.",
+    multipleLanguages: "Çoklu",
+    liveDemoLabel: "Canlı Demo",
+    githubSourceLabel: "GitHub Kaynağı",
+    previewLabel: "Proje Önizlemesi",
+    technologyLabel: "Kullanılan Teknolojiler",
   },
   blog: {
     title: "Blog",
     subtitle: "Teknoloji, projeler ve öğrenme notlarım.",
     allPosts: "Tüm yazılar →",
+    returnHome: "← Ana sayfaya dön",
+    noPostsTitle: "Henüz blog yazısı yok.",
+    noPostsHint: "İlk yazınızı ekleyin.",
+    readMore: "Devamını oku →",
+    backToBlog: "← Bloga dön",
+    postNotFound: "Blog yazısı bulunamadı",
+    postNotFoundHint: "Aradığınız blog yazısı mevcut değil.",
   },
   gallery: {
     title: "Fotoğraf Arşivi",
@@ -142,6 +207,22 @@ const tr: TranslationKey = {
     noDetailHint: "dosyasını düzenleyin.",
     openGithubDetail: "Detaylı bilgi için GitHub'da aç",
     videoUnsupported: "Tarayıcınız video oynatmayı desteklemiyor.",
+    previous: "Geri",
+    next: "İleri",
+    features: "Öne Çıkan Özellikler",
+    technologies: "Kullanılan Teknolojiler",
+    screenshots: "Ekran Görüntüleri",
+    demoVideo: "Demo Video",
+    previewImage: "Proje Önizleme Görseli",
+    liveDemo: "Canlı Demo",
+  },
+  pages: {
+    snakeGame: {
+      title: "Snake Game",
+      description:
+        "Oyun artık tarayıcınızda açılıyor. Bu sayfadan doğrudan oynayabilirsiniz.",
+      back: "Proje sayfasına geri dön",
+    },
   },
   theme: {
     light: "Açık tema",
@@ -177,10 +258,25 @@ const en: TranslationKey = {
     title: "About",
     subtitle: "Get to know me, my journey, and my goals.",
     skills: "Skills",
+    skillsList: [
+      "AI",
+      "Kotlin",
+      "Flutter",
+      "Firebase",
+      "Node.js",
+      "Python",
+      "HTML, CSS, JavaScript",
+      "Git",
+      "Various APIs (Google Maps, OpenAI, etc.)",
+      "C / C++ / C#",
+      "Vercel, Railway",
+      "Data Structures, Algorithms",
+    ],
     story: [
-      "Hi, I'm Şaban Akçehre. I'm 23 years old and born in Antalya. My interest in technology and software started in high school when my teacher gave me a book about Steve Jobs. Since then, building things, improving myself, and finishing what I start has been a major source of motivation.",
+      "Hi, I'm Şaban Akçehre. I'm 23 years old and born in Antalya. My interest in technology and software started in high school when my teacher received a book about Steve Jobs. Since then, building things, improving myself, and finishing what I start has been a major source of motivation.",
       "I'm currently studying Computer Engineering at Atatürk University and graduating in about a month. I keep growing in algorithms, web technologies, and software development. I enjoy learning new technologies, shipping projects, and communicating well in teams.",
-      "I'm open to internships and new career opportunities. My dream is to travel the world, live comfortably, do work I genuinely enjoy, and build a good family. One big reason I keep improving myself is laying the foundations for that future today.",
+      "I'm open to internships and new career opportunities. My dream is to travel the world, live comfortably, do work I genuinely enjoy, and build a good family. One big reason I keep improving myself is laying the foundation for that future today.",
+      "I love solving problems with code and creating products that help people. I aim to keep learning and shipping projects that make a real impact.",
     ],
   },
   projects: {
@@ -192,11 +288,27 @@ const en: TranslationKey = {
     noDescription: "No description provided.",
     details: "View details",
     openRepo: "Open repo →",
+    featuredTitle: "Featured Projects",
+    featuredDescription: "Main projects I built to solve real user problems.",
+    sideTitle: "Side Projects",
+    sideDescription: "Learning experiments and small utilities.",
+    multipleLanguages: "Multiple",
+    liveDemoLabel: "Live demo",
+    githubSourceLabel: "GitHub source",
+    previewLabel: "Project preview",
+    technologyLabel: "Used technologies",
   },
   blog: {
     title: "Blog",
     subtitle: "Notes on technology, projects, and learning.",
     allPosts: "All posts →",
+    returnHome: "← Back home",
+    noPostsTitle: "No blog posts yet.",
+    noPostsHint: "Add your first post.",
+    readMore: "Read more →",
+    backToBlog: "← Back to blog",
+    postNotFound: "Blog post not found",
+    postNotFoundHint: "The blog post you are looking for does not exist.",
   },
   gallery: {
     title: "Photo Archive",
@@ -222,6 +334,22 @@ const en: TranslationKey = {
     noDetailHint: "Edit the file",
     openGithubDetail: "Open on GitHub for details",
     videoUnsupported: "Your browser does not support video playback.",
+    previous: "Previous",
+    next: "Next",
+    features: "Key features",
+    technologies: "Used technologies",
+    screenshots: "Screenshots",
+    demoVideo: "Demo video",
+    previewImage: "Project preview",
+    liveDemo: "Live demo",
+  },
+  pages: {
+    snakeGame: {
+      title: "Snake Game",
+      description:
+        "The game now opens directly in your browser. Play it from this page.",
+      back: "Back to project page",
+    },
   },
   theme: {
     light: "Light theme",

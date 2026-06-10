@@ -92,12 +92,11 @@ export async function Projects() {
             <div>
               <div className="mb-8">
                 <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white">
-                  Öne Çıkan Projeler
+                  {t.projects.featuredTitle}
                 </h3>
 
                 <p className="mt-2 text-sm text-ink-muted dark:text-slate-400">
-                  Gerçek kullanıcı problemlerini çözmek için geliştirdiğim ana
-                  projeler.
+                  {t.projects.featuredDescription}
                 </p>
               </div>
 
@@ -107,7 +106,8 @@ export async function Projects() {
                   const info = getProjectDisplayInfo(
                     slug,
                     repo,
-                    t.projects.noDescription
+                    t.projects.noDescription,
+                    locale
                   );
 
                   return (
@@ -127,11 +127,11 @@ export async function Projects() {
             <div>
               <div className="mb-8">
                 <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white">
-                  Yan Projeler
+                  {t.projects.sideTitle}
                 </h3>
 
                 <p className="mt-2 text-sm text-ink-muted dark:text-slate-400">
-                  Öğrenme, deneysel geliştirme ve küçük ölçekli çalışmalar.
+                  {t.projects.sideDescription}
                 </p>
               </div>
 
@@ -141,7 +141,8 @@ export async function Projects() {
                   const info = getProjectDisplayInfo(
                     slug,
                     repo,
-                    t.projects.noDescription
+                    t.projects.noDescription,
+                    locale
                   );
 
                   return (

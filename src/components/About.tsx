@@ -2,7 +2,6 @@
 
 import { motion, Variants } from "framer-motion";
 import { useLocale } from "@/components/providers/LocaleProvider";
-import { siteConfig } from "@/config/site";
 import { AnimateIn } from "./AnimateIn";
 import { SectionHeading } from "./SectionHeading";
 
@@ -43,7 +42,7 @@ export function About() {
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <AnimateIn delay={100}>
             <div className="card-modern space-y-5 !p-8">
-              {siteConfig.story.map((paragraph, i) => (
+              {t.about.story.map((paragraph, i) => (
                 <p
                   key={i}
                   className={`leading-relaxed text-ink-muted ${
@@ -68,7 +67,7 @@ export function About() {
                 viewport={{ once: true, amount: 0.2 }}
                 variants={skillListVariants}
               >
-                {siteConfig.skills.map((skill) => (
+                {t.about.skillsList.map((skill) => (
                   <motion.li
                     key={skill}
                     variants={skillItemVariants}

@@ -1,6 +1,9 @@
+"use client";
+
 import type { BlogPost } from "@/config/blog";
-import { formatDateTR } from "@/lib/format-date";
+import { formatDate } from "@/lib/format-date";
 import Link from "next/link";
+import { useLocale } from "@/components/providers/LocaleProvider";
 
 type BlogCardProps = {
   post: BlogPost;
@@ -18,6 +21,10 @@ const staggerClasses = [
 
 export function BlogCard({ post, index = 0 }: BlogCardProps) {
   const stagger = staggerClasses[index % staggerClasses.length];
+  const { locale, t } = useLocale();
+
+  const title = locale === "en" ? post.titleEn ?? post.title : post.title;
+  const excerpt = locale === "en" ? post.excerptEn ?? post.excerpt : post.excerpt;
 
   return (
     <article
@@ -28,13 +35,13 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
         dateTime={post.date}
         className="text-xs font-medium uppercase tracking-wide text-sky-600"
       >
-        {formatDateTR(post.date)}
+        {formatDate(post.date, locale)}
       </time>
       <h3 className="mt-3 font-display text-xl font-bold transition-colors duration-300 group-hover:text-sky-600">
-        <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+        <Link href={`/blog/${post.slug}`}>{title}</Link>
       </h3>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted line-clamp-3">
-        {post.excerpt}
+        {excerpt}
       </p>
       {post.tags && post.tags.length > 0 && (
         <ul className="mt-4 flex flex-wrap gap-2">
@@ -52,7 +59,7 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
         href={`/blog/${post.slug}`}
         className="btn-primary mt-6 w-full !py-2.5 text-center text-xs sm:w-auto"
       >
-        Devamını oku →
+        {t.blog.readMore}
       </Link>
     </article>
   );
