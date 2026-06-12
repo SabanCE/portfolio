@@ -457,6 +457,17 @@ export function ProjectDetailContent({
               referrerPolicy="strict-origin-when-cross-origin"
             />
           </div>
+          <h2>Kullanılan Teknolojiler</h2>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {["PHP", "Microsoft SQL Server"].map((tech) => (
+              <div
+                key={tech}
+                className="rounded-3xl border border-slate-200/80 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700/80 dark:bg-slate-950/95 dark:text-slate-100 dark:hover:border-sky-500 dark:hover:bg-slate-900"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
         </article>
       );
 
@@ -491,6 +502,17 @@ export function ProjectDetailContent({
     case "chatapp":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
+          <h2>Kullanılan Teknolojiler</h2>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {["Kotlin", "Firebase"].map((tech) => (
+              <div
+                key={tech}
+                className="rounded-3xl border border-slate-200/80 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700/80 dark:bg-slate-950/95 dark:text-slate-100 dark:hover:border-sky-500 dark:hover:bg-slate-900"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
           <ScreenshotCarousel items={chatappScreenshots} />
         </article>
       );
@@ -498,6 +520,17 @@ export function ProjectDetailContent({
     case "gymtracking":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
+          <h2>Kullanılan Teknolojiler</h2>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {["Kotlin", "Jetpack Compose"].map((tech) => (
+              <div
+                key={tech}
+                className="rounded-3xl border border-slate-200/80 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700/80 dark:bg-slate-950/95 dark:text-slate-100 dark:hover:border-sky-500 dark:hover:bg-slate-900"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
           <ScreenshotCarousel items={gymScreenshots} />
         </article>
       );
@@ -505,6 +538,17 @@ export function ProjectDetailContent({
     case "zirve2":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
+          <h2>Kullanılan Teknolojiler</h2>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {["HTML", "CSS", "JavaScript", "Node.js", "Firebase", "Google Sheets API"].map((tech) => (
+              <div
+                key={tech}
+                className="rounded-3xl border border-slate-200/80 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700/80 dark:bg-slate-950/95 dark:text-slate-100 dark:hover:border-sky-500 dark:hover:bg-slate-900"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
           <ScreenshotCarousel
             items={zirveScreenshots}
             maxWidth={900}
@@ -518,11 +562,16 @@ export function ProjectDetailContent({
       return (
         <article className="prose-blog space-y-6 text-ink-muted">
           <h2>Kullanılan Teknolojiler</h2>
-          <ul>
-            <li>Firebase</li>
-            <li>Kotlin</li>
-            <li>Google Maps SDK</li>
-          </ul>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {["Firebase", "Kotlin", "Google Maps SDK"].map((tech) => (
+              <div
+                key={tech}
+                className="rounded-3xl border border-slate-200/80 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700/80 dark:bg-slate-950/95 dark:text-slate-100 dark:hover:border-sky-500 dark:hover:bg-slate-900"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
 
           <ScreenshotCarousel items={kampusScreenshots} />
         </article>
@@ -614,18 +663,7 @@ export function ProjectDetailContent({
 
     case "autonomous-kmeans-architecture":
       return (
-        <article className="prose-blog space-y-8 text-ink-muted dark:text-slate-400">
-          <AnimateIn blur delay={100}>
-            <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-950 shadow-card">
-              <Image
-                src="/proje_icon/k-means.png"
-                alt="Autonomous K-Means Architecture Demo"
-                width={1200}
-                height={800}
-                className="h-auto w-full rounded-3xl object-cover"
-              />
-            </div>
-          </AnimateIn>
+        <article className="prose-blog space-y-6 text-ink-muted dark:text-slate-400">
           <p>
             Akıllı K-Means Motoru: İnsan müdahalesi olmadan kümeleme parametrelerini optimize eden akıllı bir MATLAB algoritması.
           </p>

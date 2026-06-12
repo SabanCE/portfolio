@@ -46,7 +46,9 @@ export function About() {
                 <p
                   key={i}
                   className={`leading-relaxed text-ink-muted ${
-                    i < 2 ? "text-lg font-bold text-ink dark:text-slate-100" : "dark:text-slate-400"
+                    i === 0 || i === t.about.story.length - 1
+                      ? "text-lg font-bold text-ink dark:text-slate-100"
+                      : "dark:text-slate-400"
                   }`}
                 >
                   {paragraph}

@@ -143,10 +143,9 @@ const tr: TranslationKey = {
       "Veri Yapıları, Algoritmalar",
     ],
     story: [
-      "Merhaba, ben Şaban Akçehre. 23 yaşındayım ve Antalya doğumluyum. Teknolojiye ve yazılıma olan ilgim lise yıllarında, sınıf öğretmenimin bana hediye ettiği Steve Jobs kitabıyla başladı. O günden beri üretmek, kendimi geliştirmek ve başladığım bir hedefi tamamlamak benim için büyük bir motivasyon kaynağı oldu.",
-      "Şu anda Atatürk Üniversitesi Bilgisayar Mühendisliği bölümünde öğrenim görüyorum ve yaklaşık 1 ay içinde mezun oluyorum. Algoritmalar, modern web teknolojileri ve yazılım geliştirme alanlarında çalışıyor; proje üretmeyi, yeni teknolojiler keşfetmeyi ve ekip içinde iletişim kurmayı seviyorum.",
-      "Teknolojiye ve yazılıma olan ilgim lise yıllarında, sınıf öğretmenimin bana hediye ettiği Steve Jobs kitabıyla başladı. O günden beri üretmek, yeni şeyler öğrenmek ve başladığım bir hedefi tamamlamak benim için büyük bir motivasyon kaynağı oldu.",
-      "Hayalim; dünyayı gezebilmek, refah içinde yaşayabilmek, gerçekten keyif aldığım ve üretirken mutlu olduğum bir iş yapmak ve iyi bir aile kurmak. Kendimi sürekli geliştirmemin en büyük sebeplerinden biri de, gelecekte kurmak istediğim hayatın temellerini bugünden oluşturmak.",
+      "Merhaba, ben Şaban Akçehre. Atatürk Üniversitesi Bilgisayar Mühendisliği bölümünden mezun olmak üzereyim. Özellikle Android uygulama geliştirme alanına odaklanıyor, kullanıcı deneyimini ön planda tutan ve gerçek problemlere çözüm üreten uygulamalar geliştirmeyi hedefliyorum.",
+      "Üniversite sürecinde farklı projeler geliştirerek problem çözme, analitik düşünme ve fikirleri çalışan ürünlere dönüştürme konusunda deneyim kazandım. Öğrenmeye açık, araştırmayı seven ve sürekli kendini geliştirmeye önem veren bir geliştirici olarak mobil teknolojiler alanında uzmanlaşmayı hedefliyorum.",
+      "Şu anda kendimi geliştirebileceğim staj ve kariyer fırsatlarına açığım.",
     ],
   },
   projects: {
@@ -273,10 +272,9 @@ const en: TranslationKey = {
       "Data Structures, Algorithms",
     ],
     story: [
-      "Hi, I'm Şaban Akçehre. I'm 23 years old and born in Antalya. My interest in technology and software started in high school when my teacher received a book about Steve Jobs. Since then, building things, improving myself, and finishing what I start has been a major source of motivation.",
-      "I'm currently studying Computer Engineering at Atatürk University and graduating in about a month. I keep growing in algorithms, web technologies, and software development. I enjoy learning new technologies, shipping projects, and communicating well in teams.",
-      "I'm open to internships and new career opportunities. My dream is to travel the world, live comfortably, do work I genuinely enjoy, and build a good family. One big reason I keep improving myself is laying the foundation for that future today.",
-      "I love solving problems with code and creating products that help people. I aim to keep learning and shipping projects that make a real impact.",
+      "Hi, I'm Şaban Akçehre. I'm about to graduate from Atatürk University with a degree in Computer Engineering. I especially focus on Android app development, aiming to build applications that prioritize user experience and solve real problems.",
+      "During university, I gained experience in problem solving, analytical thinking, and turning ideas into working products by developing various projects. As a developer who is open to learning, loves research, and values continuous self-improvement, I aim to specialize in mobile technologies.",
+      "I am currently open to internship and career opportunities where I can develop myself.",
     ],
   },
   projects: {

@@ -3,6 +3,11 @@
  * Dosya adları public/gallery/ ile eşleşmelidir.
  */
 const galleryItems = [
+  { file: "37-Mezuniyet.jpg", caption: "Mezuniyet" },
+  { file: "36-Mezuniyet.jpg", caption: "Mezuniyet" },
+  { file: "35-Mezuniyet.jpg", caption: "Mezuniyet" },
+  { file: "34-Mezuniyet.jpg", caption: "Mezuniyet" },
+  { file: "33-Mezuniyet.jpg", caption: "Mezuniyet" },
   { file: "1-Hackhatlon Yarışması.jpeg", caption: "Hackatlon Yarışması" },
   { file: "2-Hackhatlon Yarışması.jpeg", caption: "Hackatlon Yarışması" },
   { file: "3-Kudakaf Fuarı.jpeg", caption: "Kudakaf Fuarı" },
