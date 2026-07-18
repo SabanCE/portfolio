@@ -7,7 +7,7 @@ export const siteConfig = {
   title: "Bilgisayar Mühendisi",
   tagline: "Android Developer Enthusiast",
   email: "xsabanakcehre@gmail.com",
-  location: "Antalya-Erzurum,Türkiye",
+  location: "Antalya,Turkiye",
   githubUsername: "SabanCE",
 
   /** Ana sayfa proje listesinde gösterilmeyecek repo slug'ları */
@@ -34,13 +34,11 @@ export const siteConfig = {
   avatar: "/profile.jpeg",
 
   story: [
-    "Merhaba, ben Şaban Akçehre. Bilgisayar mühendisliği öğrencisiyim ve şu anda staj ile yeni kariyer fırsatlarına açığım. Yazılım geliştirme, Mobil Uygulama Geliştirme ve kullanıcı odaklı projeler üretmek üzerine kendimi geliştirmeye devam ediyorum.",
+    "Merhaba, ben Şaban Akçehre. Bilgisayar Mühendisliği mezunuyum ve şu anda Unity ile oyun geliştirme üzerine çalışıyorum. Oyun geliştirme sürecinde C#, oyun mekanikleri, kullanıcı deneyimi ve performans optimizasyonu gibi konularda kendimi geliştirmeye devam ediyorum.",
 
-    "Şu anda Atatürk Üniversitesi Bilgisayar Mühendisliği bölümünde öğrenim görüyorum ve yaklaşık 1 ay içinde mezun oluyorum. Algoritmalar, modern web teknolojileri ve yazılım geliştirme alanlarında çalışıyor; proje üretmeyi, yeni teknolojiler keşfetmeyi ve ekip içinde iletişim kurmayı seviyorum.",
+    "Bunun yanında yazılım geliştirme alanında mobil uygulamalar ve web teknolojileriyle de ilgileniyorum. Farklı teknolojiler kullanarak kullanıcı odaklı, işlevsel ve sürdürülebilir projeler geliştirmeyi seviyor; her projeyi yeni şeyler öğrenmek ve teknik becerilerimi geliştirmek için bir fırsat olarak görüyorum.",
 
-    "Teknolojiye ve yazılıma olan ilgim lise yıllarında, sınıf öğretmenimin bana hediye ettiği Steve Jobs kitabıyla başladı. O günden beri üretmek, yeni şeyler öğrenmek ve başladığım bir hedefi tamamlamak benim için büyük bir motivasyon kaynağı oldu.",
-
-    "Hayalim; dünyayı gezebilmek, refah içinde yaşayabilmek, gerçekten keyif aldığım ve üretirken mutlu olduğum bir iş yapmak ve iyi bir aile kurmak. Kendimi sürekli geliştirmemin en büyük sebeplerinden biri de, gelecekte kurmak istediğim hayatın temellerini bugünden oluşturmak.",
+    "Öğrenmeye açık, araştırmayı seven ve disiplinli bir geliştirici olarak yeni teknolojileri takip ediyor, kendimi sürekli geliştirmeye odaklanıyorum. Amacım, kaliteli yazılım çözümleri ve etkileyici oyun deneyimleri üreterek kariyerimde güçlü bir temel oluşturmak.",
   ],
 
   skills: [

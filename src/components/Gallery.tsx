@@ -15,6 +15,7 @@ export function Gallery() {
   const expandedScrollRef = useRef<HTMLDivElement>(null);
   const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const [isHovering, setIsHovering] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const currentPhoto = activeIndex !== null ? galleryPhotos[activeIndex] : null;
 
@@ -25,7 +26,8 @@ export function Gallery() {
       autoplayIntervalRef.current = setInterval(() => {
         const activeContainer = isExpanded ? expandedScrollRef.current : normalScrollRef.current;
 
-        if (activeContainer && !isHovering) {
+        // only autoplay when the gallery is visible on screen
+        if (activeContainer && !isHovering && isVisible) {
           const scrollWidth = activeContainer.scrollWidth;
           const clientWidth = activeContainer.clientWidth;
           const currentScroll = activeContainer.scrollLeft;
@@ -44,7 +46,24 @@ export function Gallery() {
     return () => {
       if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
     };
-  }, [isHovering, isExpanded]);
+  }, [isHovering, isExpanded, isVisible]);
+
+  // observe visibility of the normal gallery container so autoplay only runs when visible
+  useEffect(() => {
+    const node = normalScrollRef.current;
+    if (!node) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsVisible(entry.isIntersecting && entry.intersectionRatio > 0.25);
+      },
+      { threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+
+    obs.observe(node);
+    return () => obs.disconnect();
+  }, []);
 
   // Keep filmstrip synced to the selected index and preserve scroll position
   useEffect(() => {
@@ -94,7 +113,7 @@ export function Gallery() {
           </div>
 
           <div className="relative pt-6 pb-20">
-            <div className="absolute right-6 top-6 z-20 flex items-center gap-2">
+            <div className="absolute right-6 top-6 z-50 flex items-center gap-2">
               <button
                 type="button"
                 onClick={() => setIsExpanded(true)}
@@ -118,21 +137,27 @@ export function Gallery() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.45, delay: index * 0.06, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.3 }}
-                  className="flex-shrink-0 min-w-[18rem] sm:min-w-[22rem] md:min-w-[26rem] lg:min-w-[30rem]"
+                  className="group relative flex-shrink-0 min-w-[18rem] sm:min-w-[22rem] md:min-w-[26rem] lg:min-w-[30rem]"
                 >
                   <button
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className="group relative flex h-[22rem] w-full overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-sky-400/50 focus:ring-offset-2 focus:ring-offset-slate-100 dark:border-slate-700 dark:bg-slate-950"
+                    className="relative flex h-[22rem] w-full overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-sky-400/50 focus:ring-offset-2 focus:ring-offset-slate-100 dark:border-slate-700 dark:bg-slate-950"
                   >
                     <div className="relative h-full w-full overflow-hidden bg-slate-900">
-                      <Image
-                        src={photo.src}
-                        alt={photo.alt}
-                        fill
-                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-                        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 28rem"
+                      <div
+                        className="absolute inset-0 bg-center bg-cover transform scale-105 filter blur-2xl opacity-70"
+                        style={{ backgroundImage: `url(${photo.src})` }}
                       />
+                      <div className="relative z-10 flex h-full w-full items-center justify-center">
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          fill
+                          className="object-contain transition-transform duration-500 ease-out"
+                          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 28rem"
+                        />
+                      </div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     <div className="absolute inset-0 flex items-end p-4">
@@ -147,6 +172,19 @@ export function Gallery() {
                         )}
                       </div>
                     </div>
+                  </button>
+
+                  {/* Per-card overlay enlarge button (shown on hover) */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActiveIndex(index);
+                      setIsExpanded(true);
+                    }}
+                    className="absolute right-4 top-4 z-40 hidden items-center gap-2 rounded-full bg-slate-900/90 px-3 py-1 text-sm font-semibold text-white shadow-lg transition group-hover:flex"
+                    aria-label={`Enlarge ${photo.alt}`}
+                  >
+                    {t.gallery.enlarge}
                   </button>
                 </motion.div>
               ))}
@@ -209,21 +247,27 @@ export function Gallery() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.45, delay: index * 0.05, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.3 }}
-                    className="flex-shrink-0 min-w-[24rem] md:min-w-[30rem] lg:min-w-[36rem]"
+                    className="group relative flex-shrink-0 min-w-[24rem] md:min-w-[30rem] lg:min-w-[36rem]"
                   >
                     <button
                       type="button"
                       onClick={() => setActiveIndex(index)}
-                      className="group relative flex h-[30rem] w-full overflow-hidden rounded-[1.75rem] border border-slate-200/70 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-sky-400/50 focus:ring-offset-2 focus:ring-offset-slate-100 dark:border-slate-700 dark:bg-slate-900"
+                      className="relative flex h-[30rem] w-full overflow-hidden rounded-[1.75rem] border border-slate-200/70 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-sky-400/50 focus:ring-offset-2 focus:ring-offset-slate-100 dark:border-slate-700 dark:bg-slate-900"
                     >
                       <div className="relative h-full w-full overflow-hidden bg-slate-900">
-                        <Image
-                          src={photo.src}
-                          alt={photo.alt}
-                          fill
-                          className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-                          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 36rem"
+                        <div
+                          className="absolute inset-0 bg-center bg-cover transform scale-105 filter blur-2xl opacity-70"
+                          style={{ backgroundImage: `url(${photo.src})` }}
                         />
+                        <div className="relative z-10 flex h-full w-full items-center justify-center">
+                          <Image
+                            src={photo.src}
+                            alt={photo.alt}
+                            fill
+                            className="object-contain transition-transform duration-500 ease-out"
+                            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 36rem"
+                          />
+                        </div>
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       <div className="absolute inset-0 flex items-end p-4">
@@ -238,6 +282,15 @@ export function Gallery() {
                           )}
                         </div>
                       </div>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setActiveIndex(index)}
+                      className="absolute right-4 top-4 z-40 hidden items-center gap-2 rounded-full bg-slate-900/90 px-3 py-1 text-sm font-semibold text-white shadow-lg transition group-hover:flex"
+                      aria-label={`Open photo ${index + 1}`}
+                    >
+                      {t.gallery.enlarge}
                     </button>
                   </motion.div>
                 ))}
@@ -297,14 +350,20 @@ export function Gallery() {
             transition={{ duration: 0.3 }}
           >
             <div className="relative flex h-[75vh] items-center justify-center bg-slate-900">
-              <Image
-                src={currentPhoto?.src ?? ""}
-                alt={currentPhoto?.alt ?? ""}
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 1200px"
-                priority
+              <div
+                className="absolute inset-0 bg-center bg-cover transform scale-105 filter blur-2xl opacity-70"
+                style={{ backgroundImage: `url(${currentPhoto?.src ?? ""})` }}
               />
+              <div className="relative z-10 flex h-full w-full items-center justify-center">
+                <Image
+                  src={currentPhoto?.src ?? ""}
+                  alt={currentPhoto?.alt ?? ""}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                  priority
+                />
+              </div>
             </div>
             {currentPhoto?.caption && (
               <div className="px-4 py-4 border-t border-slate-200">

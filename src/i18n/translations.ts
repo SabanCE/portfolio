@@ -24,6 +24,12 @@ export type TranslationKey = {
     skillsList: readonly string[];
     story: readonly string[];
   };
+  demoProject: {
+    title: string;
+    subtitle: string;
+    description: string;
+    watchVideo: string;
+  };
   projects: {
     title: string;
     subtitle: string;
@@ -143,10 +149,17 @@ const tr: TranslationKey = {
       "Veri Yapıları, Algoritmalar",
     ],
     story: [
-      "Merhaba, ben Şaban Akçehre. Atatürk Üniversitesi Bilgisayar Mühendisliği bölümünden mezun olmak üzereyim. Özellikle Android uygulama geliştirme alanına odaklanıyor, kullanıcı deneyimini ön planda tutan ve gerçek problemlere çözüm üreten uygulamalar geliştirmeyi hedefliyorum.",
-      "Üniversite sürecinde farklı projeler geliştirerek problem çözme, analitik düşünme ve fikirleri çalışan ürünlere dönüştürme konusunda deneyim kazandım. Öğrenmeye açık, araştırmayı seven ve sürekli kendini geliştirmeye önem veren bir geliştirici olarak mobil teknolojiler alanında uzmanlaşmayı hedefliyorum.",
-      "Şu anda kendimi geliştirebileceğim staj ve kariyer fırsatlarına açığım.",
+      "Merhaba, ben Şaban Akçehre. Bilgisayar Mühendisliği mezunuyum ve şu anda Unity ile oyun geliştirme üzerine çalışıyorum. Oyun geliştirme sürecinde C#, oyun mekanikleri, kullanıcı deneyimi ve performans optimizasyonu gibi konularda kendimi geliştirmeye devam ediyorum.",
+      "Bunun yanında yazılım geliştirme alanında mobil uygulamalar ve web teknolojileriyle de ilgileniyorum. Farklı teknolojiler kullanarak kullanıcı odaklı, işlevsel ve sürdürülebilir projeler geliştirmeyi seviyor; her projeyi yeni şeyler öğrenmek ve teknik becerilerimi geliştirmek için bir fırsat olarak görüyorum.",
+      "Öğrenmeye açık, araştırmayı seven ve disiplinli bir geliştirici olarak yeni teknolojileri takip ediyor, kendimi sürekli geliştirmeye odaklanıyorum. Amacım, kaliteli yazılım çözümleri ve etkileyici oyun deneyimleri üreterek kariyerimde güçlü bir temel oluşturmak.",
     ],
+  },
+  demoProject: {
+    title: "Demo Proje",
+    subtitle: "YouTube'da paylaştığım proje demo tanıtımı.",
+    description:
+      "Unity ve C# kullanılarak geliştirilmiş üçüncü şahıs bir sosyal simülasyon oyunudur. Şu anda geliştirmeye devam ediyorum. Oyuncunun diyalog seçimleri NPC'lerin güven seviyesini etkiler ve güven arttıkça yeni etkileşimler (oturma, telefon numarası alma ve mesajlaşma) açılır. Modüler diyalog sistemi sayesinde yeni karakterler ve konuşmalar kolayca eklenebilir.",
+    watchVideo: "Videoyu izle",
   },
   projects: {
     title: "Projeler",
@@ -276,6 +289,13 @@ const en: TranslationKey = {
       "During university, I gained experience in problem solving, analytical thinking, and turning ideas into working products by developing various projects. As a developer who is open to learning, loves research, and values continuous self-improvement, I aim to specialize in mobile technologies.",
       "I am currently open to internship and career opportunities where I can develop myself.",
     ],
+  },
+  demoProject: {
+    title: "Demo Project",
+    subtitle: "A project demo introduction uploaded to YouTube.",
+    description:
+      "A third-person social simulation game developed with Unity and C#. I am still actively developing it. The player's dialogue choices affect NPC trust levels, and as trust increases, new interactions such as sitting down, getting a phone number, and messaging become available. Thanks to the modular dialogue system, new characters and conversations can be added easily.",
+    watchVideo: "Watch video",
   },
   projects: {
     title: "Projects",
