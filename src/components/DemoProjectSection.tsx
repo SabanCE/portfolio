@@ -5,8 +5,19 @@ import { AnimateIn } from "./AnimateIn";
 
 export function DemoProjectSection() {
   const { t } = useLocale();
-  const videoUrl =
-    "https://www.youtube.com/embed/-jpQbrujgT8?autoplay=1&mute=1&playsinline=1";
+  const videoUrl = new URL("https://www.youtube.com/embed/-jpQbrujgT8");
+
+  videoUrl.searchParams.set("autoplay", "1");
+  videoUrl.searchParams.set("mute", "1");
+  videoUrl.searchParams.set("playsinline", "1");
+  videoUrl.searchParams.set("loop", "1");
+  videoUrl.searchParams.set("playlist", "-jpQbrujgT8");
+  videoUrl.searchParams.set("controls", "0");
+  videoUrl.searchParams.set("rel", "0");
+  videoUrl.searchParams.set("showinfo", "0");
+  videoUrl.searchParams.set("modestbranding", "1");
+  videoUrl.searchParams.set("fs", "0");
+  videoUrl.searchParams.set("iv_load_policy", "3");
 
   return (
     <section id="demo-proje" className="scroll-mt-24 py-20 md:py-28">
@@ -36,13 +47,13 @@ export function DemoProjectSection() {
 
           <AnimateIn delay={200}>
             <div className="card-modern h-full overflow-hidden !p-0 shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
-              <div className="aspect-video h-full">
+              <div className="aspect-video h-full max-h-[420px]">
                 <iframe
-                  src={videoUrl}
+                  src={videoUrl.toString()}
                   title="Eric's Choice: The Coffee Date demo"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="h-full w-full"
+                  allowFullScreen={false}
+                  className="h-full w-full border-0"
                 />
               </div>
             </div>
