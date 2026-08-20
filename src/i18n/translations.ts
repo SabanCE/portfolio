@@ -8,7 +8,6 @@ export type TranslationKey = {
   nav: {
     about: string;
     projects: string;
-    blog: string;
     gallery: string;
     contact: string;
   };
@@ -121,7 +120,6 @@ const tr: TranslationKey = {
   nav: {
     about: "Hakkımda",
     projects: "Projeler",
-    blog: "Blog",
     gallery: "Galeri",
     contact: "İletişim",
   },
@@ -136,6 +134,7 @@ const tr: TranslationKey = {
     skills: "Yetkinlikler",
     skillsList: [
       "AI",
+      "Unity",
       "Kotlin",
       "Flutter",
       "Firebase",
@@ -149,9 +148,9 @@ const tr: TranslationKey = {
       "Veri Yapıları, Algoritmalar",
     ],
     story: [
-      "Merhaba, ben Şaban Akçehre. Bilgisayar Mühendisliği mezunuyum ve şu anda Unity ile oyun geliştirme üzerine çalışıyorum. Oyun geliştirme sürecinde C#, oyun mekanikleri, kullanıcı deneyimi ve performans optimizasyonu gibi konularda kendimi geliştirmeye devam ediyorum.",
-      "Bunun yanında yazılım geliştirme alanında mobil uygulamalar ve web teknolojileriyle de ilgileniyorum. Farklı teknolojiler kullanarak kullanıcı odaklı, işlevsel ve sürdürülebilir projeler geliştirmeyi seviyor; her projeyi yeni şeyler öğrenmek ve teknik becerilerimi geliştirmek için bir fırsat olarak görüyorum.",
-      "Öğrenmeye açık, araştırmayı seven ve disiplinli bir geliştirici olarak yeni teknolojileri takip ediyor, kendimi sürekli geliştirmeye odaklanıyorum. Amacım, kaliteli yazılım çözümleri ve etkileyici oyun deneyimleri üreterek kariyerimde güçlü bir temel oluşturmak.",
+      "Merhaba, ben Şaban Akçehre. Bilgisayar Mühendisliği mezunuyum ve şu anda IT departmanında staj yapıyorum. Ağ sistemleri, sunucu yönetimi, switch ve access point yapılandırmaları ile teknik destek süreçlerinde kendimi geliştirmeye devam ediyorum.",
+      "Staj sürecinde kurumsal IT altyapısını yakından tanıyarak problem çözme ve sistem yönetimi konularında pratik deneyim kazanıyorum. Teknik destek, ağ altyapısı ve sistem yönetimi alanında öğrenmeye açık ve disiplinli bir şekilde çalışmaya devam ediyorum.",
+      "Öğrenmeye açık, araştırmayı seven ve sürekli kendini geliştirmeye önem veren bir geliştirici olarak yeni teknolojileri takip ediyor, kendimi sürekli geliştirmeye odaklanıyorum.",
     ],
   },
   demoProject: {
@@ -257,7 +256,6 @@ const en: TranslationKey = {
   nav: {
     about: "About",
     projects: "Projects",
-    blog: "Blog",
     gallery: "Gallery",
     contact: "Contact",
   },
@@ -272,6 +270,7 @@ const en: TranslationKey = {
     skills: "Skills",
     skillsList: [
       "AI",
+      "Unity",
       "Kotlin",
       "Flutter",
       "Firebase",

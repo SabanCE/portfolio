@@ -60,6 +60,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const locale = await getServerLocale();
   const t = getTranslations(locale);
   const { title, description } = getProjectDisplayInfo(slug, repo);
+  const technologyLabel = slug === "socialsurvive" ? "Unity" : repo.language;
   const hideHeaderDescription =
     slug === "snake-game-web" ||
     slug === "flower-gift" ||
@@ -80,9 +81,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           <header className="mt-8 animate-fade-up">
             <div className="flex flex-wrap items-center gap-3">
-              {repo.language && (
+              {technologyLabel && (
                 <span className="rounded-full bg-gradient-to-r from-sky-100 to-violet-100 px-3 py-1 text-xs font-semibold text-sky-700">
-                  {repo.language}
+                  {technologyLabel}
                 </span>
               )}
             </div>

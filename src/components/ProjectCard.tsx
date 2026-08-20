@@ -43,6 +43,10 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
   const slug = repoToSlug(repo.name);
   const mediaItems = getProjectMedia(slug);
   const previewImage = mediaItems.find((item) => item.type === "image");
+  const fallbackVideo = mediaItems.find(
+    (item) => item.type === "youtube" || item.type === "iframe"
+  );
+  const displayedTechnology = slug === "socialsurvive" ? "Unity" : repo.language;
 
   const pointerX = useMotionValue(0.5);
   const pointerY = useMotionValue(0.5);
@@ -146,9 +150,9 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
             <Link href={projectDetailPath(repo.name)}>{info.title}</Link>
           </h3>
 
-          {repo.language && (
+          {displayedTechnology && (
             <span className="shrink-0 rounded-full bg-gradient-to-r from-sky-100 to-violet-100 px-3 py-1 text-xs font-semibold text-sky-700 dark:from-sky-900/50 dark:to-violet-900/50 dark:text-sky-300">
-              {repo.language}
+              {displayedTechnology}
             </span>
           )}
         </div>
@@ -183,7 +187,7 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
           </div>
           <div className="flex flex-wrap gap-2">
             <span className="rounded-full bg-slate-100 px-2 py-1 dark:bg-slate-800">
-              {repo.language ?? t.projects.multipleLanguages}
+              {displayedTechnology ?? t.projects.multipleLanguages}
             </span>
             {repo.homepage ? (
               <a
@@ -234,6 +238,16 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
                       className="block h-auto max-h-[60vh] w-full object-contain"
                     />
                   </div>
+                ) : fallbackVideo ? (
+                  <div className="overflow-hidden rounded-[1.5rem] bg-slate-200">
+                    <iframe
+                      src={fallbackVideo.src}
+                      title={fallbackVideo.alt}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="block h-[320px] w-full rounded-[1.5rem] border-0"
+                    />
+                  </div>
                 ) : (
                   <div className="flex h-[320px] items-center justify-center rounded-[1.5rem] bg-slate-200 text-center text-slate-500">
                     <span>Demo görseli mevcut değil.</span>
@@ -258,7 +272,7 @@ export function ProjectCard({ repo, index, t, info }: ProjectCardProps) {
                   <div className="space-y-3 text-sm text-slate-700">
                     <div className="flex items-center justify-between gap-3">
                       <span className="text-slate-500">{t.projects.technologyLabel}</span>
-                      <span className="font-semibold text-slate-900">{repo.language ?? t.projects.multipleLanguages}</span>
+                      <span className="font-semibold text-slate-900">{displayedTechnology ?? t.projects.multipleLanguages}</span>
                       </div>
                     </div>
                   </div>

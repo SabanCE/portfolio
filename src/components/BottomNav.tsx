@@ -32,8 +32,6 @@ export function BottomNav({
   const navItems = [
     { label: t.nav.projects, href: "/#projeler" },
     { label: t.nav.about, href: "/#hakkimda" },
-    { label: t.nav.gallery, href: "/#galeri" },
-    { label: t.nav.blog, href: "/blog" },
     { label: t.nav.contact, href: "/#iletisim" },
   ];
 

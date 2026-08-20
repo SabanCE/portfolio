@@ -8,6 +8,14 @@ export const projectDetailOverrides: Record<
     descriptionEn?: string;
   }
 > = {
+  socialsurvive: {
+    title: "Social Survive",
+    titleEn: "Social Survive",
+    description:
+      "Unity ve C# kullanılarak geliştirilen üçüncü şahıs sosyal hayatta kalma oyunu. Oyuncunun diyalog seçimleri, güven ilişkilerini ve oyun akışını etkileyen bir sistem üzerine kuruludur.",
+    descriptionEn:
+      "A third-person survival social game developed with Unity and C#. The player's dialogue choices influence trust relationships and shape the overall flow of the game.",
+  },
   aiyardimcim: {
     title: "AI Yaşam Asistanı",
     titleEn: "AI Life Assistant",

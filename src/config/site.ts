@@ -22,6 +22,7 @@ export const siteConfig = {
 
   /** Öne çıkan ana projeler */
   featuredProjectSlugs: [
+    "socialsurvive",
     "aiyardimcim",
     "restoranpos",
     "chatapp",
@@ -34,11 +35,11 @@ export const siteConfig = {
   avatar: "/profile.jpeg",
 
   story: [
-    "Merhaba, ben Şaban Akçehre. Bilgisayar Mühendisliği mezunuyum ve şu anda Unity ile oyun geliştirme üzerine çalışıyorum. Oyun geliştirme sürecinde C#, oyun mekanikleri, kullanıcı deneyimi ve performans optimizasyonu gibi konularda kendimi geliştirmeye devam ediyorum.",
+    "Merhaba, ben Şaban Akçehre. Bilgisayar Mühendisliği mezunuyum ve şu anda IT departmanında staj yapıyorum. Ağ sistemleri, sunucu yönetimi, switch ve access point yapılandırmaları ile teknik destek süreçlerinde kendimi geliştirmeye devam ediyorum.",
 
-    "Bunun yanında yazılım geliştirme alanında mobil uygulamalar ve web teknolojileriyle de ilgileniyorum. Farklı teknolojiler kullanarak kullanıcı odaklı, işlevsel ve sürdürülebilir projeler geliştirmeyi seviyor; her projeyi yeni şeyler öğrenmek ve teknik becerilerimi geliştirmek için bir fırsat olarak görüyorum.",
+    "Staj sürecinde kurumsal IT altyapısını yakından tanıyarak problem çözme ve sistem yönetimi konularında pratik deneyim kazanıyorum. Teknik destek, ağ altyapısı ve sistem yönetimi alanında öğrenmeye açık ve disiplinli bir şekilde çalışmaya devam ediyorum.",
 
-    "Öğrenmeye açık, araştırmayı seven ve disiplinli bir geliştirici olarak yeni teknolojileri takip ediyor, kendimi sürekli geliştirmeye odaklanıyorum. Amacım, kaliteli yazılım çözümleri ve etkileyici oyun deneyimleri üreterek kariyerimde güçlü bir temel oluşturmak.",
+    "Öğrenmeye açık, araştırmayı seven ve sürekli kendini geliştirmeye önem veren bir geliştirici olarak yeni teknolojileri takip ediyor, kendimi sürekli geliştirmeye odaklanıyorum.",
   ],
 
   skills: [
@@ -66,8 +67,6 @@ export const siteConfig = {
   nav: [
     { label: "Hakkımda", href: "/#hakkimda" },
     { label: "Projeler", href: "/#projeler" },
-    { label: "Blog", href: "/blog" },
-    { label: "Galeri", href: "/#galeri" },
     { label: "İletişim", href: "/#iletisim" },
   ],
 } as const;

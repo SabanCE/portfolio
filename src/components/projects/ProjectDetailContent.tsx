@@ -646,6 +646,65 @@ export function ProjectDetailContent({
         </article>
       );
 
+    case "socialsurvive":
+      return (
+        <article className="prose-blog space-y-6 text-ink-muted">
+          <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-black shadow-card">
+            <iframe
+              src="https://www.youtube.com/embed/4aRt6s2joYo?rel=0"
+              title="Social Survive Demo"
+              className="aspect-video w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+
+          <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-card dark:border-slate-700/80 dark:bg-slate-950/95">
+            <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-slate-100">
+              Oynanış &amp; Sistemler
+            </h2>
+            <ul className="space-y-3 text-base leading-relaxed text-ink-muted dark:text-slate-400">
+              <li>
+                <strong>Seçimlere Göre Şekillenen Diyaloglar:</strong> NPC ile konuşurken verdiğin cevaplara göre anlık değişen ilişki puanı.
+              </li>
+              <li>
+                <strong>Oyun İçi Telefon:</strong> Mesajlaşarak buluşma ayarladığımız dinamik ve işlevsel bir sohbet arayüzü.
+              </li>
+              <li>
+                <strong>Yapay Zekâ ve At Mekaniği:</strong> Karakteri ve atı takip eden, eş zamanlı olarak ata binen NPC sistemi.
+              </li>
+            </ul>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-card dark:border-slate-700/80 dark:bg-slate-950/95">
+            <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-slate-100">
+              Teknik Altyapı
+            </h2>
+            <ul className="space-y-3 text-base leading-relaxed text-ink-muted dark:text-slate-400">
+              <li>
+                <strong>🧠 Kural Tabanlı NLP &amp; Niyet Analizi:</strong> Türkçe metinleri analiz edip (normalizasyon &amp; tokenizasyon) 18+ farklı niyeti sınıflandıran ve FSM ile yanıt üreten NPC mesajlaşma motoru.
+              </li>
+              <li>
+                <strong>💬 Dallanan Diyalog &amp; İlişki Algoritması:</strong> JSON tabanlı diyalog ağaçları üzerinden Güven, Rahatlık ve Çekim değişkenlerine göre şekillenen ilişki puanı mimarisi.
+              </li>
+              <li>
+                <strong>🔄 Sahneler Arası Veri &amp; Durum Yönetimi:</strong> Singleton Pattern, DontDestroyOnLoad ve sceneLoaded dinleyicileriyle Kafe ↔ Doğa arası kesintisiz veri aktarımı ve dinamik UI Re-binding.
+              </li>
+              <li>
+                <strong>🎯 Hibrit Etkileşim &amp; Fizik Mekanizması:</strong> 3D Physics Trigger&apos;lar ile Vector3.Distance mesafe ölçümünü birleştiren kararlı nesne/koltuk etkileşim altyapısı.
+              </li>
+              <li>
+                <strong>📱 Dinamik Chat UI &amp; JSON Serialization:</strong> LayoutRebuilder ile mesaj uzunluğuna göre boyutlanan arayüz ve JSON tabanlı diyalog geçmişi saklama.
+              </li>
+              <li>
+                <strong>🐎 NavMesh AI &amp; Animator State Machine:</strong> NavMesh tabanlı NPC yol bulma algoritması ile oturma, kalkma, uyuma ve binek geçişlerini yöneten durum makineleri.
+              </li>
+            </ul>
+          </div>
+        </article>
+      );
+
     case "databaseoperations":
       return (
         <article className="prose-blog space-y-6 text-ink-muted">

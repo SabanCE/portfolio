@@ -156,6 +156,14 @@ const projectMediaMap: Record<string, ProjectMediaItem[]> = {
       caption: "Proje Önizleme Görseli",
     },
   ],
+  socialsurvive: [
+    {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/4aRt6s2joYo?rel=0&autoplay=1&mute=1&playsinline=1",
+      alt: "Social Survive demo video",
+      caption: "Demo Video",
+    },
+  ],
   databaseoperations: [
     {
       type: "image",
