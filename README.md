@@ -1,75 +1,129 @@
-# Kişisel Portfolyo Sitesi
+# Şaban Akçehre | Kişisel Portfolyo
 
-Bilgisayar mühendisliği portfolyosu: hakkımda, GitHub projeleri, fotoğraf arşivi ve iletişim.
+Bilgisayar mühendisliği, Android geliştirme ve kurumsal IT deneyimini bir
+arada sunan kişisel portfolyo sitesi. Site; projeleri, teknik yetkinlikleri,
+blog yazılarını, fotoğraf galerisini ve iletişim kanallarını tek bir yerde
+toplar.
 
-## Hızlı başlangıç
+## Özellikler
+
+- Türkçe ve İngilizce dil desteği
+- Açık/koyu tema ve responsive tasarım
+- GitHub depolarını otomatik getiren proje bölümü
+- Öne çıkan projeler için detay sayfaları
+- Tarihe göre sıralanan blog ve yazı detay sayfaları
+- Fotoğraf galerisi
+- Ziyaretçi sayacı (Upstash Redis ile)
+- Admin girişi ve korumalı yönetim paneli
+- Framer Motion ve GSAP ile animasyonlar
+
+## Teknolojiler
+
+- Next.js 15 ve React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion ve GSAP
+- Iron Session
+- Upstash Redis
+
+## Kurulum
+
+Gereksinimler: Node.js 18.18 veya daha yeni bir sürüm.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Tarayıcıda [http://localhost:3000](http://localhost:3000) adresini açın.
+Geliştirme sunucusunu başlatınca [http://localhost:3000](http://localhost:3000)
+adresini açın.
 
-## Kişiselleştirme
+Üretim derlemesini kontrol etmek için:
 
-Tüm metinler ve bağlantılar tek dosyada:
+```bash
+npm run build
+npm start
+```
 
-**`src/config/site.ts`**
+## Ortam değişkenleri
 
-| Alan | Açıklama |
-|------|----------|
-| `name`, `title`, `tagline` | Ana sayfa metinleri |
-| `githubUsername` | GitHub repoları otomatik çekilir |
-| `about`, `skills` | Hakkımda bölümü |
-| `social` | GitHub, LinkedIn, e-posta linkleri |
-| `galleryPhotos` | Galeri listesi |
+Admin girişi ve ziyaretçi sayacı için proje kökünde `.env.local` dosyası
+oluşturun:
 
-### Profil fotoğrafı
+```env
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=guclu-bir-sifre
+SESSION_SECRET=en-az-32-karakterlik-rastgele-bir-deger
+UPSTASH_REDIS_REST_URL=https://your-database.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your-upstash-token
+```
 
-`public/profile.jpg` (veya `.png`) dosyasını ekleyin ve `site.ts` içinde `avatar: "/profile.jpg"` yapın.
+`SESSION_SECRET` en az 32 karakter olmalıdır. Upstash bilgileri yalnızca
+ziyaretçi sayacı kullanılacaksa gereklidir. `.env.local` dosyasını Git’e
+eklemeyin.
 
-### Fotoğraf arşivi
+## Sayfalar ve rotalar
 
-1. Fotoğrafları `public/gallery/` klasörüne kopyalayın.
-2. `src/config/site.ts` → `galleryPhotos` dizisine `src`, `alt`, `caption` ekleyin.
+| Rota | Açıklama |
+| --- | --- |
+| `/` | Ana portfolyo: tanıtım, hakkımda, projeler ve iletişim |
+| `/blog` | Tüm blog yazıları |
+| `/blog/[slug]` | Blog yazısı detayı |
+| `/projeler/[slug]` | Proje detay sayfası |
+| `/giris` | Admin giriş ekranı |
+| `/admin` | Korumalı admin paneli |
+| `/snake-game-web` | Snake Game projesi |
 
-### GitHub
+## İçerik yönetimi
 
-`githubUsername` alanına kendi kullanıcı adınızı yazın. API her saat önbelleğe alınır; özel repolar görünmez.
+### Site bilgileri
+
+Ana sayfadaki ad, unvan, açıklamalar, yetenekler, sosyal medya bağlantıları,
+GitHub kullanıcı adı ve öne çıkan projeler [`src/config/site.ts`](src/config/site.ts)
+dosyasından düzenlenir.
+
+### Projeler
+
+`githubUsername` alanı, GitHub’daki public repoları proje listesine bağlar.
+`featuredProjectSlugs` öne çıkarılacak repoları, `excludedProjectSlugs` ise
+listeden gizlenecek repoları belirler. GitHub API yanıtları bir saat boyunca
+önbelleğe alınır.
+
+Proje detay içeriği için
+[`src/components/projects/ProjectDetailContent.tsx`](src/components/projects/ProjectDetailContent.tsx)
+dosyasındaki `slug` eşleşmelerini güncelleyin.
 
 ### Blog
 
-1. `src/config/blog.ts` → yazı listesi (başlık, tarih, özet, slug, etiketler)
-2. `src/components/blog/BlogPostContent.tsx` → yazının tam içeriği (`case` ile slug eşleşmesi)
+Yazıları [`src/config/blog.ts`](src/config/blog.ts) içinde tanımlayın. Her yazı
+`slug`, başlık, özet, tarih, etiketler ve Türkçe/İngilizce içerik alanlarından
+oluşur. Ana sayfada en yeni üç yazı gösterilir.
 
-- Ana sayfada son 3 yazı önizlemesi
-- Tüm yazılar: `/blog`
-- Yazı detayı: `/blog/[slug]`
+### Galeri
 
-### Proje detay sayfaları
+Fotoğrafları `public/gallery/` klasörüne ekleyin ve
+[`src/config/gallery.ts`](src/config/gallery.ts) içindeki listeye görsel yolu,
+alt metni ve açıklamayı yazın. Profil fotoğrafı `public/profile.jpeg` olarak
+beklenir; farklı bir dosya kullanırsanız `siteConfig.avatar` değerini değiştirin.
 
-Her proje kartındaki **Detaylı bilgi** butonu `/projeler/[slug]` sayfasına gider.
-
-Detay içeriğini siz yazacaksınız:
-
-1. `src/components/projects/ProjectDetailContent.tsx` dosyasını açın
-2. `switch (slug)` içine projenizin slug'ı için bir `case` ekleyin (slug, detay sayfası URL'sinde görünür)
-3. İstediğiniz JSX içeriğini `return` edin
-
-## Yayınlama
-
-- **Vercel:** Repoyu GitHub’a push edin, [vercel.com](https://vercel.com) üzerinden import edin.
-- **Statik export:** `next.config.ts` içine `output: "export"` ekleyip `npm run build` çalıştırın.
+Admin panelindeki blog ve galeri ekranları için giriş akışı hazırdır; içerik
+kalıcılığı şu anda config dosyaları üzerinden yapılır.
 
 ## Proje yapısı
 
+```text
+src/app/          Next.js sayfaları ve API route'ları
+src/components/   Arayüz bileşenleri
+src/config/       Site, blog, galeri ve proje verileri
+src/i18n/         Çeviri metinleri
+src/lib/          GitHub, session, tarih ve yardımcı fonksiyonlar
+public/           Görseller, galeri ve statik varlıklar
+middleware.ts     Admin rotası koruması
 ```
-src/
-  app/          → Sayfa ve global stiller
-  components/   → Header, Hero, About, Projects, Gallery, Contact
-  config/       → site.ts (sizin verileriniz)
-  lib/          → GitHub API
-public/
-  gallery/      → Fotoğraflarınız
-```
+
+## Yayınlama
+
+Vercel, Next.js uygulaması için önerilen dağıtım seçeneğidir. Projeyi GitHub’a
+push edip Vercel’de import edin ve `.env.local` içindeki değişkenleri proje
+ayarlarından ekleyin. Ardından `npm run build` ile üretim derlemesini
+doğrulayın.
